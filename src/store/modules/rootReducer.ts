@@ -1,8 +1,4 @@
 import { combineReducers } from 'redux'
+export interface GlobalStateInterface { }
 
-export interface GlobalStateInterface {
-
-}
-
-export default combineReducers({
-})
+export default combineReducers({})

@@ -8,9 +8,9 @@ const lightTheme = {
 
 const darkTheme = {
   title: 'dark',
-  body: 'rgb(18, 18, 20)',
+  body: 'rgb(32, 32, 36)',
   text: '#f1f1f1',
-  content: 'rgb(32, 32, 36)',
+  content: 'rgb(18, 18, 20)',
   primary: '#EA1D2C'
 }
 
