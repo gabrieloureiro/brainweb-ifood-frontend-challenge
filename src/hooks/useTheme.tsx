@@ -7,7 +7,6 @@ interface ThemeContextData {
   theme: Theme
   changeTheme(theme: Theme): void
 }
-
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
 const CustomThemeProvider: React.FC = ({ children }) => {
@@ -20,6 +19,7 @@ const CustomThemeProvider: React.FC = ({ children }) => {
       setTheme({ ...lightTheme, ...colors })
     }
   }
+
   return (
     <ThemeContext.Provider value={{ theme, changeTheme }}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>

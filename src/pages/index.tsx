@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
 import { useToast } from '@/hooks/useToast'
-import { useTheme } from '@/hooks/useTheme'
+
+import Layout from '@/components/Layout'
 
 const Home: React.FC = () => {
-  const { theme, changeTheme } = useTheme()
-
   const { addToast } = useToast()
 
   useEffect(() => {
@@ -15,11 +14,10 @@ const Home: React.FC = () => {
       type: 'info'
     })
   }, [])
-
   return (
-    <div style={{ width: '100%' }}>
-      <button onClick={() => changeTheme(theme)}> changeTRheme</button>
-    </div>
+    <Layout title="Home" description="Home" highlightTitle="Monte sua pizza!">
+      oi
+    </Layout>
   )
 }
 
