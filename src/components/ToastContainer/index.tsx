@@ -1,13 +1,16 @@
 import React from 'react'
 import { useTransition } from 'react-spring'
 
-import BannerNotification from './BannerNotification'
+import Toast from './Toast'
 
 import { Container } from './styles'
+import { ToastMessage } from '@/hooks/useToast'
 
-import { BannerContainerProps } from './types'
+interface ToastContainerProps {
+  messages: ToastMessage[]
+}
 
-const BannerContainer: React.FC<BannerContainerProps> = ({ messages }) => {
+const ToastContainer: React.FC<ToastContainerProps> = ({ messages }) => {
   const messagesWithTransitions = useTransition(
     messages,
     message => message.id,
@@ -21,10 +24,10 @@ const BannerContainer: React.FC<BannerContainerProps> = ({ messages }) => {
   return (
     <Container>
       {messagesWithTransitions.map(({ item, key, props }) => (
-        <BannerNotification key={key} style={props} message={item} />
+        <Toast key={key} style={props} message={item} />
       ))}
     </Container>
   )
 }
 
-export default BannerContainer
+export default ToastContainer
