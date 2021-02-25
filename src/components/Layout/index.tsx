@@ -8,7 +8,7 @@ import Topbar from '@/components/Topbar'
 import Container from '@/components/Container'
 import { ImWhatsapp } from 'react-icons/im'
 
-import { FloatChat, Message } from './styles'
+import { FloatChat, Message, Title } from './styles'
 
 const Layout: React.FC<LayoutInterface> = ({
   title,
@@ -22,9 +22,11 @@ const Layout: React.FC<LayoutInterface> = ({
         <title>{title}</title>
         <meta name="description" content={description}></meta>
       </Head>
-
-      <Topbar highlightTitle={highlightTitle} />
-      <Container>{children}</Container>
+      <Topbar highlightTitle="Pizza Center" />
+      <Container>
+        <Title>{highlightTitle}</Title>
+        {children}
+      </Container>
       <FloatChat
         aria-label="whatsapp"
         target="_blank"

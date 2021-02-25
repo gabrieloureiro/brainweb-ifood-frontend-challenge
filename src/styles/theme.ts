@@ -1,16 +1,18 @@
 const lightTheme = {
   title: 'light',
   body: '#f2f2f7',
-  text: 'rgb(32, 32, 36)',
+  text: '#3E3E3E',
+  auxText: '#202024',
   content: '#ffffff',
-  primary: '#EA1D2C'
+  primary: '#8b0000'
 }
 
 const darkTheme = {
   title: 'dark',
-  body: 'rgb(32, 32, 36)',
-  text: '#f1f1f1',
-  content: 'rgb(18, 18, 20)',
+  body: '#121214',
+  text: '#E1E1E6',
+  auxText: '#A8A8B3',
+  content: '#202024',
   primary: '#EA1D2C'
 }
 
@@ -20,7 +22,7 @@ const colors = {
   lightGreen: '#e6fffa',
   green: '#59af7b',
   lightRed: '#fddede',
-  red: '#E0040B',
+  red: '#EA1D2C',
   lightYellow: '#F1E2C6',
   yellow: '#E7A74E',
   orange: '#ffa500'

@@ -1,5 +1,17 @@
 import styled from 'styled-components'
 
+export const Title = styled.h1`
+  font-size: 32px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.text};
+  padding: 32px 0 64px 0;
+  transition: all 0.5s ease;
+
+  @media screen and (max-width: 1130px) {
+    padding-bottom: 32px;
+  }
+`
+
 export const FloatChat = styled.a`
   position: fixed;
   width: 50px;
@@ -14,6 +26,7 @@ export const FloatChat = styled.a`
   cursor: pointer;
   transition: all 0.5s ease;
   text-decoration: none;
+  z-index: 5;
 
   &:hover {
     background: ${({ theme }) => theme.green} 0% 0% no-repeat padding-box;
@@ -41,6 +54,7 @@ export const Message = styled.div`
   border: 0.5px solid ${({ theme }) => theme.content};
   padding: 8px;
   transition: 300ms linear;
+  z-index: 5;
 
   &::before {
     content: '';

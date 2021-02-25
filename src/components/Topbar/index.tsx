@@ -10,7 +10,6 @@ import { FaSun, FaMoon } from 'react-icons/fa'
 
 import {
   StyledBar,
-  Title,
   Brand,
   Avatar,
   Logos,
@@ -32,7 +31,6 @@ const Topbar: React.FC<TopbarInterface> = ({ highlightTitle }) => {
             <Brand src="/images/brainweb.png" alt="brainweb" />
           </Link>
         </Logos>
-        <Title>{highlightTitle}</Title>
         <IconWrapper onClick={() => changeTheme(theme)}>
           {theme.title === 'dark' ? (
             <FaSun color="#ffa500" size={16} />

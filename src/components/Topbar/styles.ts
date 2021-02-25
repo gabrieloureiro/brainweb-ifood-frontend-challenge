@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import styled from 'styled-components'
 
 import { IconWrapperProps } from './types'
@@ -11,7 +12,6 @@ export const StyledBar = styled.div`
   width: 100%;
   height: 72px;
   background: ${({ theme }) => theme.content};
-  box-shadow: 1px 1px 8px rgba(255, 0, 0, 0.2);
 `
 
 export const Wrapper = styled.div`
@@ -22,30 +22,10 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 1180px;
 `
-
-export const Title = styled.h3`
-  font-size: 24px;
-  padding-left: 112px;
-  font-weight: bold;
-  font-style: bold;
-  color: ${({ theme }) => theme.primary};
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.2s ease;
-
-  @media screen and (max-width: 540px) {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
-`
-
 export const IconWrapper = styled.div<IconWrapperProps>`
   position: absolute;
-  right: 96px;
+  bottom: 14px;
+  right: 80px;
   padding: 8px;
   background: transparent;
   cursor: pointer;
@@ -96,6 +76,12 @@ export const Avatar = styled.img`
   object-fit: cover;
   vertical-align: middle;
   cursor: pointer;
+  border: 2px solid ${({ theme }) => theme.auxText};
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme.primary};
+  }
 
   @media screen and (max-width: 250px) {
     margin: 0 30px;

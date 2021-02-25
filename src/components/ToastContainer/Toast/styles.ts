@@ -45,6 +45,7 @@ export const Container = styled(animated.div) <ContainerProps>`
       font-size: 14px;
       opacity: 0.6;
       line-height: 20px;
+      max-width: 360px;
     }
   }
 
@@ -56,5 +57,9 @@ export const Container = styled(animated.div) <ContainerProps>`
     border: 0;
     background: transparent;
     color: inherit;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
   }
 `
