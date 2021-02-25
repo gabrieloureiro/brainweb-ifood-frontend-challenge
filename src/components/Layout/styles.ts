@@ -1,3 +1,4 @@
+import { shade } from 'polished'
 import styled from 'styled-components'
 
 export const Title = styled.h1`
@@ -9,6 +10,59 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 1130px) {
     padding-bottom: 32px;
+  }
+`
+
+export const StepperButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+  left: 48.5%;
+  padding: 8px 12px 8px 4px;
+  border-radius: 5px;
+  background: ${({ theme }) => shade(0.15, theme.yellow)};
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  span {
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: ${({ theme }) => shade(0.3, theme.yellow)};
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 5px;
+    left: 50px;
+    z-index: 5;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  @media screen and (max-height: 882px) {
+    padding: 5px;
+    left: 50px;
+    z-index: 5;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    span {
+      display: none;
+    }
   }
 `
 

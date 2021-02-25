@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { StyledContainer } from './styles'
-
 import { ContainerInterface } from './types'
+
+import { StyledContainer } from './styles'
 
 const Container: React.FC<ContainerInterface> = ({ children }) => {
   return (

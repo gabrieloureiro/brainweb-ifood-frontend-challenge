@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { useFetch } from '@/hooks/useFetch'
 
-import { DefaultPizzaProps } from '@/models/pizza'
+import { DefaultProps } from '@/models/pizza'
 import { RequestProps } from '@/models/request'
 import { GlobalStateInterface } from '@/store/modules/rootReducer'
 
@@ -14,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createRequest } from '@/store/modules/request/actions'
 import { readPizzas } from '@/store/modules/pizza/actions'
 
+import Layout from '@/components/Layout'
 import Loader from '@/components/Loader'
 import FullRowCard from '@/components/FullRowCard'
 import { GiDoughRoller } from 'react-icons/gi'
@@ -24,38 +24,25 @@ import {
   IconWrapper
 } from '@/styles/screens/assemble'
 
-const Layout = dynamic(() => import('@/components/Layout'), {
-  ssr: false,
-  loading: () => <Loader />
-})
-
 const Dough: React.FC = () => {
   const { data } = useFetch('pizzas')
   const dispatch = useDispatch()
-  const doughs = useSelector<GlobalStateInterface, DefaultPizzaProps[]>(
+  const doughs = useSelector<GlobalStateInterface, DefaultProps[]>(
     state => state.pizzas.dough
-  )
-  const requestDough = useSelector<GlobalStateInterface, RequestProps>(
-    state => state.request.dough
   )
 
   const doughRequest = ({ dough }: RequestProps) => {
     dispatch(createRequest({ dough }))
   }
 
+  // Carrega o store do redux com dados
   useEffect(() => {
-    if (!doughs) {
+    if (data) {
       dispatch(readPizzas(data))
     }
   }, [doughs, dispatch, data])
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('requestDough', JSON.stringify(requestDough))
-    }
-  }, [requestDough])
-
-  if (!doughs || !data) {
+  if (!data) {
     return <Loader />
   }
 

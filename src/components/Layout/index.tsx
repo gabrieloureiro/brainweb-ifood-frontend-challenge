@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import { LayoutInterface } from './types'
 
@@ -8,7 +9,8 @@ import Topbar from '@/components/Topbar'
 import Container from '@/components/Container'
 import { ImWhatsapp } from 'react-icons/im'
 
-import { FloatChat, Message, Title } from './styles'
+import { FloatChat, Message, StepperButton, Title } from './styles'
+import { FiChevronLeft } from 'react-icons/fi'
 
 const Layout: React.FC<LayoutInterface> = ({
   title,
@@ -16,6 +18,7 @@ const Layout: React.FC<LayoutInterface> = ({
   highlightTitle,
   children
 }) => {
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -25,6 +28,12 @@ const Layout: React.FC<LayoutInterface> = ({
       <Topbar highlightTitle="Pizza Center" />
       <Container>
         <Title>{highlightTitle}</Title>
+        {router.pathname !== '/' ? (
+          <StepperButton onClick={() => router.back()}>
+            <FiChevronLeft color="#FFF" size={24} />
+            <span>Voltar</span>
+          </StepperButton>
+        ) : null}
         {children}
       </Container>
       <FloatChat

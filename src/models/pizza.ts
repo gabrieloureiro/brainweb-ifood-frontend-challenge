@@ -1,12 +1,13 @@
-export interface DefaultPizzaProps {
+export interface DefaultProps {
   id: string
   type: string
   value: number
 }
 
 export interface PizzaProps {
-  dough: DefaultPizzaProps[]
-  edge: DefaultPizzaProps[]
-  size: DefaultPizzaProps[]
-  filling: DefaultPizzaProps[]
+  dough: DefaultProps[]
+  edge: DefaultProps[]
+  size: DefaultProps[]
+  filling: DefaultProps[]
+  payment: DefaultProps[]
 }

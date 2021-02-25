@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react'
-import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
 import Loader from '@/components/Loader'
 import {
   FullRowCardList,
@@ -12,41 +10,50 @@ import FullRowCard from '@/components/FullRowCard'
 import options from '@/utils/toLocaleStringOptions'
 import { GlobalStateInterface } from '@/store/modules/rootReducer'
 import { useDispatch, useSelector } from 'react-redux'
-import { DefaultPizzaProps } from '@/models/pizza'
+import { DefaultProps } from '@/models/pizza'
 import { RequestProps } from '@/models/request'
 import { createRequest } from '@/store/modules/request/actions'
 import { SiIfood } from 'react-icons/si'
-
-const Layout = dynamic(() => import('@/components/Layout'), {
-  ssr: false,
-  loading: () => <Loader />
-})
+import { useFetch } from '@/hooks/useFetch'
+import { readPizzas } from '@/store/modules/pizza/actions'
+import Layout from '@/components/Layout'
+import { useRouter } from 'next/router'
+import { useToast } from '@/hooks/useToast'
+import { doughError } from '@/utils/errorToastMessages'
 
 const Edge: React.FC = () => {
   const router = useRouter()
+  const { data } = useFetch('pizzas')
+  const { addToast } = useToast()
   const dispatch = useDispatch()
-  const edges = useSelector<GlobalStateInterface, DefaultPizzaProps[]>(
+  const edges = useSelector<GlobalStateInterface, DefaultProps[]>(
     state => state.pizzas.edge
+  )
+  const requestDough = useSelector<GlobalStateInterface, DefaultProps>(
+    state => state.request.dough
   )
 
   const edgeRequest = ({ edge }: RequestProps) => {
     dispatch(createRequest({ edge }))
   }
 
-  // Verifica se a massa ja foi escolhida
+  // Carrega o store do redux com dados
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      if (localStorage.getItem('requestDough') === null) {
-        router.push('/assemble/dough')
-      }
+    if (data) {
+      dispatch(readPizzas(data))
+    }
+  }, [edges, dispatch, data])
+
+  // Verifica se dados anteriores ja foram escolhidos
+  useEffect(() => {
+    if (!requestDough) {
+      router.push('/assemble/dough')
+      addToast(doughError)
     }
   }, [])
 
-  // Loader se massa nao foi escolhida
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('requestDough') === null) {
-      return <Loader />
-    }
+  if (!data || !requestDough) {
+    return <Loader />
   }
 
   return (
@@ -58,7 +65,7 @@ const Edge: React.FC = () => {
       <FullRowCardList>
         {edges?.map(item => {
           return (
-            <Link key={item.id} href="/assemble/edge">
+            <Link key={item.id} href="/assemble/size">
               <FullRowCardListItem
                 onClick={() =>
                   edgeRequest({
@@ -72,7 +79,11 @@ const Edge: React.FC = () => {
               >
                 <FullRowCard index={item.id}>
                   <span>{item.type}</span>
-                  <p>{item.value.toLocaleString('pt-BR', options)}</p>
+                  <p>
+                    {item.value === 0
+                      ? 'Grátis'
+                      : item.value.toLocaleString('pt-BR', options)}
+                  </p>
                   <IconWrapper type={item.id}>
                     <SiIfood color="#fff" size={40} />
                   </IconWrapper>
