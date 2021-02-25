@@ -4,7 +4,7 @@ const homeCards = [
     title: 'Monte sua pizza',
     icon: 'giFullPizza',
     description: 'Monte sua pizza da maneira que preferir!',
-    path: '/assemble'
+    path: '/assemble/dough'
   },
   {
     id: 2,

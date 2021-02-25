@@ -1,124 +1,143 @@
 {
   "recommendations": [
     {
-      "sunday": {
-        "title": "Super pepperoni",
-        "description": "1x Pizza grande de pepperoni (Massa grossa + Borda de cream cheese)",
-        "value": 29.40,
-        "benefitPoints": 1.72
-      },
-      "monday": {
-        "title": "Minion's de Frango",
-        "description": "5x Mini pizzas de frango (Massa fina + Borda padrão)",
-        "value": 23.90,
-        "benefitPoints": 1.19
-      },
-      "tuesday": {
-        "title": "Gêmeas solares",
-        "description": "2x Pizzas médias de Carne do sol (Massa caseira + Borda de requeijão)",
-        "value": 49.90,
-        "benefitPoints": 2.49
-      },
-      "wednesday": {
-        "title": "Combo econômico",
-        "description": "2x Pizzas grandes de calabresa + Refrigerante 2L (Massa grossa + Borda de cheddar)",
-        "value": 45.90,
-        "benefitPoints": 2.29
-      },
-      "thursday": {
-        "title": "Tem pra todo mundo!",
-        "description": "2x Pizzas família de frango c/ carne do sol (Massa caseira + Borda de cream cheese)",
-        "value": 43.90,
-        "benefitPoints": 2.19
-      },
-      "friday": {
-        "title": "Combo Itália",
-        "description": "2x Pizzas de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
-        "value": 54.90,
-        "benefitPoints": 2.74
-      },
-      "saturday": {
-        "title": "Combo fim de tarde",
-        "description": "12x Mini pizzas de carne do sol + 2x Refrigerante 600ml (Massa caseira + Borda padrão)",
-        "value": 49.90,
-        "benefitPoints": 2.49
-      }
+      "id": 1,
+      "title": "Super pepperoni",
+      "description": "1x Pizza grande de pepperoni (Massa grossa + Borda de cream cheese)",
+      "value": 29.40,
+      "benefitPoints": 1.72
+    },
+    {
+      "id": 2,
+      "title": "Minion's de Frango",
+      "description": "5x Mini pizzas de frango (Massa fina + Borda padrão)",
+      "value": 23.90,
+      "benefitPoints": 1.19
+    },
+    {
+      "id": 3,
+      "title": "Gêmeas solares",
+      "description": "2x Pizzas médias de Carne do sol (Massa caseira + Borda de requeijão)",
+      "value": 49.90,
+      "benefitPoints": 2.49
+    },
+    {
+      "id": 4,
+      "title": "Combo econômico",
+      "description": "2x Pizzas grandes de calabresa + Refrigerante 2L (Massa grossa + Borda de cheddar)",
+      "value": 45.90,
+      "benefitPoints": 2.29
+    },
+    {
+      "id": 5,
+      "title": "Tem pra todo mundo!",
+      "description": "2x Pizzas família de frango c/ carne do sol (Massa caseira + Borda de cream cheese)",
+      "value": 43.90,
+      "benefitPoints": 2.19
+    },
+    {
+      "id": 6,
+      "title": "Combo Itália",
+      "description": "2x Pizzas de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
+      "value": 54.90,
+      "benefitPoints": 2.74
+    },
+    {
+      "id": 7,
+      "title": "Combo fim de tarde",
+      "description": "12x Mini pizzas de carne do sol + 2x Refrigerante 600ml (Massa caseira + Borda padrão)",
+      "value": 49.90,
+      "benefitPoints": 2.49
     }
   ],
-  "pizzas": [
-    {
-      "dough": [
-        {
-          "type": "Massa fina",
-          "value": 3.50
-        },
-        {
-          "type": "Massa caseira",
-          "value": 4.00
-        },
-        {
-          "type": "Massa grossa",
-          "value": 4.50
-        }
-      ],
-      "edge": [
-        {
-          "type": "Borda padrão",
-          "value": 0.00
-        },
-        {
-          "type": "Borda de cheddar",
-          "value": 2.00
-        },
-        {
-          "type": "Borda de requeijão",
-          "value": 3.00
-        },
-        {
-          "type": "Borda de cream cheese",
-          "value": 4.00
-        }
-      ],
-      "size": [
-        {
-          "type": "Mini",
-          "value": 3.00
-        },
-        {
-          "type": "Pequena",
-          "value": 4.00
-        },
-        {
-          "type": "Média",
-          "value": 5.00
-        },
-        {
-          "type": "Grande",
-          "value": 6.00
-        },
-        {
-          "type": "Família",
-          "value": 8.00
-        }
-      ],
-      "filling": [
-        {
-          "type": "Calabresa",
-          "value": 12.90
-        },
-        {
-          "type": "Frango",
-          "value": 13.90
-        },
-        {
-          "type": "Carne do sol",
-          "value": 14.90
-        },
-        {
-          "type": "Pepperoni",
-          "value": 19.90
-        }
-      ]
-    }
-  ]
+  "pizzas": {
+    "dough": [
+      {
+        "id": 1,
+        "type": "Massa fina",
+        "value": 3.50
+      },
+      {
+        "id": 2,
+        "type": "Massa caseira",
+        "value": 4.00
+      },
+      {
+        "id": 3,
+        "type": "Massa grossa",
+        "value": 4.50
+      }
+    ],
+    "edge": [
+      {
+        "id": 1,
+        "type": "Borda padrão",
+        "value": 0.00
+      },
+      {
+        "id": 2,
+        "type": "Borda de cheddar",
+        "value": 2.00
+      },
+      {
+        "id": 3,
+        "type": "Borda de requeijão",
+        "value": 3.00
+      },
+      {
+        "id": 4,
+        "type": "Borda de cream cheese",
+        "value": 4.00
+      }
+    ],
+    "size": [
+      {
+        "id": 1,
+        "type": "Mini",
+        "value": 3.00
+      },
+      {
+        "id": 2,
+        "type": "Pequena",
+        "value": 4.00
+      },
+      {
+        "id": 3,
+        "type": "Média",
+        "value": 5.00
+      },
+      {
+        "id": 4,
+        "type": "Grande",
+        "value": 6.00
+      },
+      {
+        "id": 5,
+        "type": "Família",
+        "value": 8.00
+      }
+    ],
+    "filling": [
+      {
+        "id": 1,
+        "type": "Calabresa",
+        "value": 12.90
+      },
+      {
+        "id": 2,
+        "type": "Frango",
+        "value": 13.90
+      },
+      {
+        "id": 3,
+        "type": "Carne do sol",
+        "value": 14.90
+      },
+      {
+        "id": 4,
+        "type": "Pepperoni",
+        "value": 19.90
+      }
+    ]
+  }
 }
