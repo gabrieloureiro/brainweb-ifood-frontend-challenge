@@ -8,7 +8,7 @@ interface IconWrapperProps {
   type: string
 }
 
-const backgroundIconVariations = {
+export const backgroundIconVariations = {
   giFullPizza: css`
     background: ${({ theme }) => theme.primary};
   `,
