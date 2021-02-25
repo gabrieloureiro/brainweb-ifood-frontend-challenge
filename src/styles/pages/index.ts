@@ -105,7 +105,7 @@ export const Card = styled(StyledCard)`
 `
 
 export const AnimatedContainer = styled(motion.aside)`
-  max-width: calc(100% - 4px);
+  max-width: 100%;
   height: 6.4rem;
   align-self: flex-start;
   position: absolute;

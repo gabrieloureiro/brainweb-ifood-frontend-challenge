@@ -43,7 +43,6 @@ export default createGlobalStyle`
   #__next {
     height: 100%;
 		min-height: -webkit-fill-available;
-    overflow-x: hidden;
 
     font-family: Roboto, sans-serif;
     font: normal 16px Roboto;
@@ -59,12 +58,12 @@ export default createGlobalStyle`
     }
 
     ::-webkit-scrollbar {
-      width: 3px;
+      width: 5px;
     }
 
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: ${({ theme }) => theme.red};
+      background-color: rgb(61, 60, 66);
     }
 
   }
