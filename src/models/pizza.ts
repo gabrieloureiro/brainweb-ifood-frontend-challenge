@@ -10,12 +10,3 @@ export interface PizzaProps {
   size: DefaultPizzaProps[]
   filling: DefaultPizzaProps[]
 }
-
-export interface RequestsProps {
-  id: number
-  dough: string
-  edge: string
-  size: string
-  filling: string
-  value: number
-}

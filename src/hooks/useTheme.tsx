@@ -1,6 +1,9 @@
 import React, { createContext, useContext, useState } from 'react'
-import { lightTheme, darkTheme, colors } from '@/styles/theme'
+
 import { Theme } from '@/styles/styled'
+
+import { lightTheme, darkTheme, colors } from '@/styles/theme'
+
 import { ThemeProvider } from 'styled-components'
 
 interface ThemeContextData {

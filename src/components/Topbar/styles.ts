@@ -44,21 +44,21 @@ export const Logos = styled.div`
 export const Brand = styled.img`
   border: 0;
   margin: auto 0;
-  max-height: 48px;
-  height: 48px;
+  max-height: 30px;
+  height: 30px;
   margin-left: 32px;
   max-width: 90px;
   transition: all 0.5s ease;
   cursor: pointer;
 
   @media screen and (max-width: 315px) {
-    height: 30px;
+    height: 20px;
     &:first-child {
-      width: 50px;
+      width: 40px;
     }
 
     &:last-child {
-      width: 30px;
+      width: 20px;
     }
   }
 `
