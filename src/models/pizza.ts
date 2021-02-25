@@ -1,4 +1,4 @@
-interface DefaultPizzaProps {
+export interface DefaultPizzaProps {
   id: string
   type: string
   value: number

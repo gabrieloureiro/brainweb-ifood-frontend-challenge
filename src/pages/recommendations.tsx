@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout'
+import Loader from '@/components/Loader'
 import { useFetch } from '@/hooks/useFetch'
 import { readRecommendations } from '@/store/modules/recommendations/actions'
 import React, { useEffect } from 'react'
@@ -13,6 +14,10 @@ const Recommendations: React.FC = () => {
       dispatch(readRecommendations(data))
     }
   }, [data, dispatch])
+
+  if (!data) {
+    return <Loader />
+  }
 
   return (
     <Layout

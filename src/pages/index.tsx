@@ -17,7 +17,7 @@ import {
   CardListItem,
   IconWrapper,
   AnimatedContainer
-} from '@/styles/pages/index'
+} from '@/styles/screens/index'
 
 const icons = {
   giFullPizza: <GiFullPizza color="#FFF" size={48} />,
