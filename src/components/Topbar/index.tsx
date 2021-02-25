@@ -1,32 +1,48 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 import React from 'react'
-import { useToast } from '@/hooks/useToast'
+import Link from 'next/link'
+import { useTheme } from '@/hooks/useTheme'
 
 import { TopbarInterface } from './types'
 
-import { StyledBar, Title, Brand, Avatar, Logos, Wrapper } from './styles'
+import { FaSun, FaMoon } from 'react-icons/fa'
+
+import {
+  StyledBar,
+  Title,
+  Brand,
+  Avatar,
+  Logos,
+  Wrapper,
+  IconWrapper
+} from './styles'
 
 const Topbar: React.FC<TopbarInterface> = ({ highlightTitle }) => {
-  const { addToast } = useToast()
+  const { theme, changeTheme } = useTheme()
 
   return (
     <StyledBar>
       <Wrapper>
         <Logos>
-          <Brand src="/images/ifood.png" alt="ifood" />
-          <Brand src="/images/brainweb.png" alt="brainweb" />
+          <Link href="/">
+            <Brand src="/images/ifood.png" alt="ifood" />
+          </Link>
+          <Link href="/">
+            <Brand src="/images/brainweb.png" alt="brainweb" />
+          </Link>
         </Logos>
         <Title>{highlightTitle}</Title>
-        <Avatar
-          src="/images/gl.jpg"
-          alt="avatar"
-          onClick={() =>
-            addToast({
-              title: 'Hey! Do you like me? ;)',
-              description: 'Check the About me page and contact',
-              type: 'info'
-            })
-          }
-        />
+        <IconWrapper onClick={() => changeTheme(theme)}>
+          {theme.title === 'dark' ? (
+            <FaSun color="#ffa500" size={16} />
+          ) : (
+              <FaMoon color="#3172b7" size={16} />
+            )}
+        </IconWrapper>
+        <Link href="/about">
+          <Avatar src="/images/gl.jpg" alt="avatar" />
+        </Link>
       </Wrapper>
     </StyledBar>
   )

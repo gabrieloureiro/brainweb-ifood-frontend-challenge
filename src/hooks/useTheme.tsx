@@ -10,7 +10,7 @@ interface ThemeContextData {
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
 const CustomThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>({ ...lightTheme, ...colors })
+  const [theme, setTheme] = useState<Theme>({ ...darkTheme, ...colors })
 
   const changeTheme = (theme: Theme) => {
     if (theme.title === 'light') {

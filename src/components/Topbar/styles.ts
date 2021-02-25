@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { IconWrapperProps } from './types'
+
 export const StyledBar = styled.div`
   display: flex;
   justify-content: center;
@@ -9,19 +11,21 @@ export const StyledBar = styled.div`
   width: 100%;
   height: 72px;
   background: ${({ theme }) => theme.content};
-  border-bottom: 0.5px solid ${({ theme }) => theme.primary};
+  box-shadow: 2px 2px 8px rgba(255, 0, 0, 0.2);
 `
 
 export const Wrapper = styled.div`
+  position: relative;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 1180px;
 `
 
 export const Title = styled.h3`
   font-size: 24px;
+  padding-left: 112px;
   font-weight: bold;
   font-style: bold;
   color: ${({ theme }) => theme.primary};
@@ -39,10 +43,22 @@ export const Title = styled.h3`
   }
 `
 
+export const IconWrapper = styled.div<IconWrapperProps>`
+  position: absolute;
+  right: 96px;
+  padding: 8px;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.5s ease;
+`
+
 export const Logos = styled.div`
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  left: 0;
 `
 
 export const Brand = styled.img`
@@ -53,6 +69,7 @@ export const Brand = styled.img`
   margin-left: 32px;
   max-width: 90px;
   transition: all 0.5s ease;
+  cursor: pointer;
 
   @media screen and (max-width: 315px) {
     height: 30px;
@@ -66,6 +83,8 @@ export const Brand = styled.img`
   }
 `
 export const Avatar = styled.img`
+  position: absolute;
+  right: 0;
   border: 0;
   margin: auto 0;
   margin-right: 32px;
