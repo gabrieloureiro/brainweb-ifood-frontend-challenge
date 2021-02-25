@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useToast } from '@/hooks/useToast'
 
 import Layout from '@/components/Layout'
+import Loader from '@/components/Loader'
 
 const Home: React.FC = () => {
   const { addToast } = useToast()
@@ -16,7 +17,7 @@ const Home: React.FC = () => {
   }, [])
   return (
     <Layout title="Home" description="Home" highlightTitle="Monte sua pizza!">
-      oi
+      <Loader />
     </Layout>
   )
 }

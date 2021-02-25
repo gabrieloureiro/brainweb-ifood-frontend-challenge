@@ -4,6 +4,7 @@ import { AppProps } from 'next/app'
 import GlobalStyle from '@/styles/global'
 
 import AppProvider from '@/provider'
+import '@/components/Loader/styles'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
