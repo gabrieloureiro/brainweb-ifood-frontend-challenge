@@ -11,7 +11,7 @@ export const StyledBar = styled.div`
   width: 100%;
   height: 72px;
   background: ${({ theme }) => theme.content};
-  box-shadow: 2px 2px 8px rgba(255, 0, 0, 0.2);
+  box-shadow: 1px 1px 8px rgba(255, 0, 0, 0.2);
 `
 
 export const Wrapper = styled.div`
