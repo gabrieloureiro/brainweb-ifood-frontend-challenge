@@ -1,12 +1,18 @@
 import React, { useEffect, memo } from 'react'
 import Link from 'next/link'
-import { useToast } from '@/hooks/useToast'
 
-import GRADIENT_ANIMATION from '@/animations/gradientAside'
+import { useToast } from '@/hooks/useToast'
+import { useFetch } from '@/hooks/useFetch'
+import { useDispatch } from 'react-redux'
+
+import { readPizzas } from '@/store/modules/pizza/actions'
 
 import homeCards from '@/models/homeCards'
 
+import GRADIENT_ANIMATION from '@/animations/gradientAside'
+
 import Layout from '@/components/Layout'
+import Loader from '@/components/Loader'
 import { GiFullPizza } from 'react-icons/gi'
 import { MdLocalOffer } from 'react-icons/md'
 import { IoIosRocket } from 'react-icons/io'
@@ -26,7 +32,16 @@ const icons = {
 }
 
 const Home: React.FC = () => {
+  const { data } = useFetch('pizzas')
+  const dispatch = useDispatch()
+
   const { addToast } = useToast()
+
+  useEffect(() => {
+    if (data) {
+      dispatch(readPizzas(data))
+    }
+  }, [data, dispatch])
 
   useEffect(() => {
     addToast({
@@ -36,6 +51,10 @@ const Home: React.FC = () => {
       type: 'info'
     })
   }, [])
+
+  if (!data) {
+    return <Loader />
+  }
 
   return (
     <Layout
