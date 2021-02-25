@@ -1,33 +1,33 @@
-import FullRowCard from '@/components/FullRowCard'
+import React, { useEffect } from 'react'
+
 import Layout from '@/components/Layout'
 import Loader from '@/components/Loader'
 import { useFetch } from '@/hooks/useFetch'
-import { useToast } from '@/hooks/useToast'
 import { DefaultProps } from '@/models/pizza'
 import { RequestProps } from '@/models/request'
 import { readPizzas } from '@/store/modules/pizza/actions'
 import { createRequest } from '@/store/modules/request/actions'
 import { GlobalStateInterface } from '@/store/modules/rootReducer'
-import {
-  FullRowCardList,
-  FullRowCardListItem,
-  IconWrapper
-} from '@/styles/screens/assemble'
-import { doughError, edgeError, sizeError } from '@/utils/errorToastMessages'
+
 import options from '@/utils/toLocaleStringOptions'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
-import { SiIfood } from 'react-icons/si'
 import { useDispatch, useSelector } from 'react-redux'
+import { useToast } from '@/hooks/useToast'
+import {
+  doughError,
+  edgeError,
+  fillingError,
+  sizeError
+} from '@/utils/errorToastMessages'
 
-const Filling: React.FC = () => {
+const Payment: React.FC = () => {
   const router = useRouter()
   const { data } = useFetch('pizzas')
   const { addToast } = useToast()
   const dispatch = useDispatch()
-  const fillings = useSelector<GlobalStateInterface, DefaultProps[]>(
-    state => state.pizzas.filling
+  const payments = useSelector<GlobalStateInterface, DefaultProps[]>(
+    state => state.pizzas.payment
   )
   const requestDough = useSelector<GlobalStateInterface, DefaultProps>(
     state => state.request.dough
@@ -38,8 +38,11 @@ const Filling: React.FC = () => {
   const requestSize = useSelector<GlobalStateInterface, DefaultProps>(
     state => state.request.size
   )
+  const requestFilling = useSelector<GlobalStateInterface, DefaultProps>(
+    state => state.request.filling
+  )
 
-  const fillingRequest = ({ filling }: RequestProps) => {
+  const paymentRequest = ({ filling }: RequestProps) => {
     dispatch(createRequest({ filling }))
   }
 
@@ -48,7 +51,7 @@ const Filling: React.FC = () => {
     if (data) {
       dispatch(readPizzas(data))
     }
-  }, [fillings, dispatch, data])
+  }, [payments, dispatch, data])
 
   // Verifica se dados anteriores ja foram escolhidos
   useEffect(() => {
@@ -61,47 +64,30 @@ const Filling: React.FC = () => {
     } else if (!requestSize) {
       router.push('/assemble/size')
       addToast(sizeError)
+    } else if (!requestFilling) {
+      router.push('/assemble/filling')
+      addToast(fillingError)
     }
   }, [])
 
-  if (!data || !requestDough || !requestEdge || !requestSize) {
+  if (
+    !data ||
+    !requestDough ||
+    !requestEdge ||
+    !requestSize ||
+    !requestFilling
+  ) {
     return <Loader />
   }
   return (
     <Layout
-      title="Recheio | Monte sua pizza!"
-      description="Escolha o recheio da pizza"
+      title="Caixa | Monte sua pizza!"
+      description="Escolha a forma de pagamento"
       highlightTitle="Escolha o recheio da pizza"
     >
-      <FullRowCardList>
-        {fillings?.map(item => {
-          return (
-            <Link key={item.id} href="/payment">
-              <FullRowCardListItem
-                onClick={() =>
-                  fillingRequest({
-                    filling: {
-                      id: item.id,
-                      type: item.type,
-                      value: item.value
-                    }
-                  })
-                }
-              >
-                <FullRowCard index={item.id}>
-                  <span>{item.type}</span>
-                  <p>{item.value.toLocaleString('pt-BR', options)}</p>
-                  <IconWrapper type={item.id}>
-                    <SiIfood color="#fff" size={40} />
-                  </IconWrapper>
-                </FullRowCard>
-              </FullRowCardListItem>
-            </Link>
-          )
-        })}
-      </FullRowCardList>
+      a
     </Layout>
   )
 }
 
-export default Filling
+export default Payment

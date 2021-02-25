@@ -29,21 +29,14 @@ const request: Reducer<RequestProps> = (
       }
 
       case 'CREATE_REQUEST': {
-        const { dough, edge, filling, size } = action.payload
-
-        const doughValue = dough?.value ?? 0
-        const edgeValue = edge?.value ?? 0
-        const fillingValue = filling?.value ?? 0
-        const sizeValue = size?.value ?? 0
-
-        const totalValue = doughValue + edgeValue + fillingValue + sizeValue
+        const { dough, edge, filling, size, payment } = action.payload
 
         return {
           dough: dough || draft.dough,
           edge: edge || draft.edge,
           filling: filling || draft.filling,
           size: size || draft.size,
-          value: totalValue || draft.value
+          payment: payment || draft.payment
         }
       }
       default: {
