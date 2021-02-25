@@ -1,6 +1,7 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 import { LoaderInterface } from './types'
+
 const load = keyframes`
   0% {
     -webkit-transform: rotate(0deg);
@@ -12,18 +13,20 @@ const load = keyframes`
   }
 `
 
-const handleSize = (size: string) => {
-  switch (size) {
-    case 'small': {
-      return '35px'
-    }
-    case 'large': {
-      return '130px'
-    }
-    default: {
-      return '70px'
-    }
-  }
+const sizeVariations = {
+  small: css`
+    width: 35px;
+    height: 35px;
+  `,
+  medium: css`
+    width: 70px;
+    height: 70px;
+  `,
+
+  large: css`
+    width: 130px;
+    height: 130px;
+  `
 }
 
 export const Wrapper = styled.div`
@@ -36,10 +39,8 @@ export const Wrapper = styled.div`
   background-color: transparent;
 `
 
-export const StyledLoader = styled.div`
+export const StyledLoader = styled.div<LoaderInterface>`
   border-radius: 50%;
-  width: ${(props: LoaderInterface) => handleSize(props.size)};
-  height: ${(props: LoaderInterface) => handleSize(props.size)};
   position: relative;
   text-indent: -9999em;
   border-top: 5px solid ${({ theme }) => theme.primary};
@@ -51,6 +52,8 @@ export const StyledLoader = styled.div`
   transform: translateZ(0);
   -webkit-animation: ${load} 1s infinite linear;
   animation: ${load} 1s infinite linear;
+
+  ${props => sizeVariations[props.size || 'medium']}
 
   &::after {
     border-radius: 50%;

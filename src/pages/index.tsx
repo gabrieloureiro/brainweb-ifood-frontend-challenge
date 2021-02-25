@@ -3,6 +3,7 @@ import { useToast } from '@/hooks/useToast'
 
 import Layout from '@/components/Layout'
 import Loader from '@/components/Loader'
+import { Card } from '@/components/Card'
 
 const Home: React.FC = () => {
   const { addToast } = useToast()
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
   return (
     <Layout title="Home" description="Home" highlightTitle="Monte sua pizza!">
       <Loader />
+      <Card elevation="1">AAAAAAAAAA</Card>
     </Layout>
   )
 }
