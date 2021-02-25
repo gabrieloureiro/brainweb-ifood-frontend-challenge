@@ -1,8 +1,8 @@
 const lightTheme = {
   title: 'light',
-  body: '#f1f1f1',
-  text: 'rgb(18, 18, 20)',
-  content: '#fff',
+  body: '#f2f2f7',
+  text: 'rgb(32, 32, 36)',
+  content: '#ffffff',
   primary: '#EA1D2C'
 }
 
@@ -22,7 +22,8 @@ const colors = {
   lightRed: '#fddede',
   red: '#E0040B',
   lightYellow: '#F1E2C6',
-  yellow: '#E7A74E'
+  yellow: '#E7A74E',
+  orange: '#ffa500'
 }
 
 export { lightTheme, darkTheme, colors }

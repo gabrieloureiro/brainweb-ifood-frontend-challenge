@@ -14,7 +14,7 @@ export default createGlobalStyle`
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth !important;
-    /* transition: color, background-color 0.5s ease-out; */
+    transition: color, background-color 0.5s ease-out;
   }
 
   button {
@@ -43,13 +43,14 @@ export default createGlobalStyle`
   #__next {
     height: 100%;
 		min-height: -webkit-fill-available;
+    overflow-x: hidden;
 
     font-family: Roboto, sans-serif;
     font: normal 16px Roboto;
 
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    /* transition: color, background-color 0.5s ease-out; */
+    transition: color, background-color 0.5s ease-out;
 
     ::-webkit-scrollbar-track {
       background-color: transparent;

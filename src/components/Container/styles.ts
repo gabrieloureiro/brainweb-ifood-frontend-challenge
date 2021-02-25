@@ -9,4 +9,9 @@ export const StyledContainer = styled.div`
   background: ${({ theme }) => theme.body};
   transition: padding 0.5s ease;
 
+  main {
+    margin: 0 auto;
+    display: block;
+    max-width: 1180px;
+  }
 `
