@@ -14,7 +14,7 @@ import {
 } from '@/styles/screens/about'
 import { Row } from '@/components/Row'
 import Tag from '@/components/Tag'
-import { stackes } from '@/models/stackes'
+import { stackes } from '@/models/aboutMeStackes'
 
 const Home: React.FC = () => {
   const { addToast } = useToast()

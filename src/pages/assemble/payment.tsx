@@ -33,15 +33,16 @@ import {
   TotalValue,
   PayButton,
   CashierTitle
-} from '@/styles/screens/payments'
+} from '@/styles/screens/assemble/payments'
 import { readRecommendations } from '@/store/modules/recommendations/actions'
 import { RecommendProps } from '@/models/recommendations'
 import { SiIfood } from 'react-icons/si'
 import Switch from '@/components/Switch'
 import api from '@/services/api'
+
 import { successRequest } from '@/utils/successToastMessages'
 
-const Payment: React.FC = () => {
+const PaymentAssemble: React.FC = () => {
   const router = useRouter()
   const { data } = useFetch('recommendations')
   const { addToast } = useToast()
@@ -238,4 +239,4 @@ const Payment: React.FC = () => {
   )
 }
 
-export default Payment
+export default PaymentAssemble
