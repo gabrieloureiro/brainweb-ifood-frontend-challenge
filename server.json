@@ -401,6 +401,34 @@
         "type": "Dinheiro",
         "value": 20.4
       }
+    },
+    {
+      "id": "b09b919b-6c7c-4b7b-9dd7-a15ce59fa57c",
+      "dough": {
+        "id": 1,
+        "type": "Massa fina",
+        "value": 3.5
+      },
+      "edge": {
+        "id": 2,
+        "type": "Borda de cheddar",
+        "value": 2
+      },
+      "size": {
+        "id": 3,
+        "type": "Grande",
+        "value": 6
+      },
+      "filling": {
+        "id": 3,
+        "type": "Pepperoni",
+        "value": 19.9
+      },
+      "payment": {
+        "id": "2148b2eb-8c7c-4954-bc1a-52eed21cd732",
+        "type": "Dinheiro",
+        "value": 31.4
+      }
     }
   ]
 }

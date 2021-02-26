@@ -38,9 +38,7 @@ const Topbar: React.FC<TopbarInterface> = () => {
               <FaMoon color="#3172b7" size={16} />
             )}
         </IconWrapper>
-        <Link href="/about">
-          <Avatar src="/images/gl.jpg" alt="avatar" />
-        </Link>
+        <Avatar src="/images/gl.jpg" alt="avatar" />
       </Wrapper>
     </StyledBar>
   )
