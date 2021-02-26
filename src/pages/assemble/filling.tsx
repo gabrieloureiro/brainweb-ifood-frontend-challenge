@@ -76,7 +76,7 @@ const Filling: React.FC = () => {
       <FullRowCardList>
         {fillings?.map(item => {
           return (
-            <Link key={item.id} href="/payment">
+            <Link key={item.id} href="/assemble/payment">
               <FullRowCardListItem
                 onClick={() =>
                   fillingRequest({

@@ -1,13 +1,13 @@
-import React, { useEffect, memo, useState } from 'react'
+import React, { useEffect, memo } from 'react'
 import Link from 'next/link'
 
 import { useToast } from '@/hooks/useToast'
 import { useFetch } from '@/hooks/useFetch'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { readPizzas } from '@/store/modules/pizza/actions'
 
-import homeCards from '@/models/homeCards'
+import homeCards from '@/models/cardsHub'
 import { welcomeInfo } from '@/utils/infoToastMessages'
 
 import GRADIENT_ANIMATION from '@/animations/gradientAside'
@@ -25,8 +25,8 @@ import {
   IconWrapper,
   AnimatedContainer
 } from '@/styles/screens/index'
-import { GlobalStateInterface } from '@/store/modules/rootReducer'
-import { DefaultProps } from '@/models/pizza'
+import api from '@/services/api'
+import { readRecommendations } from '@/store/modules/recommendations/actions'
 
 const icons = {
   giFullPizza: <GiFullPizza color="#FFF" size={48} />,
@@ -39,20 +39,19 @@ const Home: React.FC = () => {
   const dispatch = useDispatch()
   const { addToast } = useToast()
 
-  const requestDough = useSelector<GlobalStateInterface, DefaultProps>(
-    state => state.request.dough
-  )
-
   useEffect(() => {
     if (data) {
       dispatch(readPizzas(data))
+      addToast(welcomeInfo)
     }
   }, [data, dispatch])
 
   useEffect(() => {
-    if (!requestDough) {
-      addToast(welcomeInfo)
-    }
+    api.get('recommendations').then(response => {
+      if (response.status === 200) {
+        dispatch(readRecommendations(response.data))
+      }
+    })
   }, [])
 
   if (!data) {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_IFOOD_API,
+  baseURL: 'http://localhost:3333/',
   responseType: 'json',
   headers: {
     'content-type': 'application/json',

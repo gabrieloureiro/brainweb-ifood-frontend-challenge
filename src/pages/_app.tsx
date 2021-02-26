@@ -4,7 +4,9 @@ import { AppProps } from 'next/app'
 import GlobalStyle from '@/styles/global'
 
 import AppProvider from '@/provider'
-import '@/components/Loader/styles'
+
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
