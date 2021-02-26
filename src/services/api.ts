@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_IFOOD_API,
+  baseURL: 'https://ifood-brainweb.herokuapp.com/',
   responseType: 'json',
   headers: {
     'content-type': 'application/json',
