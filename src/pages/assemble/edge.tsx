@@ -58,7 +58,7 @@ const Edge: React.FC = () => {
 
   return (
     <Layout
-      title="Bordas | Monte sua pizza!"
+      title="Bordas da pizza"
       description="Escolha a borda que deseja"
       highlightTitle="Escolha a borda que deseja"
     >

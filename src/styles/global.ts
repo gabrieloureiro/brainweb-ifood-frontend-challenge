@@ -15,6 +15,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth !important;
     transition: color, background-color 0.5s ease-out;
+
   }
 
   button {

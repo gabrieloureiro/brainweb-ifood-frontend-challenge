@@ -13,7 +13,7 @@ const darkTheme = {
   text: '#E1E1E6',
   auxText: '#A8A8B3',
   content: '#202024',
-  primary: '#EA1D2C'
+  primary: '#8b0000'
 }
 
 const colors = {

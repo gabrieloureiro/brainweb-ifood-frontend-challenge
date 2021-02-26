@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { v4 as uuid } from 'uuid'
 import Layout from '@/components/Layout'
 import Loader from '@/components/Loader'
 import { useFetch } from '@/hooks/useFetch'
 import { DefaultProps } from '@/models/pizza'
 import { RequestProps } from '@/models/request'
-import { readPizzas } from '@/store/modules/pizza/actions'
 import { createRequest } from '@/store/modules/request/actions'
 import { GlobalStateInterface } from '@/store/modules/rootReducer'
 
@@ -20,14 +19,37 @@ import {
   fillingError,
   sizeError
 } from '@/utils/errorToastMessages'
+import {
+  CashierWrapper,
+  MediumCard,
+  SmallCardRow,
+  TitleOffer,
+  ActionTitle,
+  DescriptionOffer,
+  IconWp,
+  BenefitPoints,
+  Tooltip,
+  TotalValue,
+  PayButton,
+  CashierTitle
+} from '@/styles/screens/payments'
+import { readRecommendations } from '@/store/modules/recommendations/actions'
+import { RecommendProps } from '@/models/recommendations'
+import { SiIfood } from 'react-icons/si'
+import Switch from '@/components/Switch'
+import api from '@/services/api'
+import { successRequest } from '@/utils/successToastMessages'
 
 const Payment: React.FC = () => {
   const router = useRouter()
-  const { data } = useFetch('pizzas')
+  const { data } = useFetch('recommendations')
   const { addToast } = useToast()
   const dispatch = useDispatch()
-  const payments = useSelector<GlobalStateInterface, DefaultProps[]>(
-    state => state.pizzas.payment
+  const [todayRecommend, setTodayRecommend] = useState({} as RecommendProps)
+  const [payWithMoney, setPayWithMoney] = useState(false)
+
+  const recommendations = useSelector<GlobalStateInterface, RecommendProps[]>(
+    state => state.recommendations
   )
   const requestDough = useSelector<GlobalStateInterface, DefaultProps>(
     state => state.request.dough
@@ -41,17 +63,78 @@ const Payment: React.FC = () => {
   const requestFilling = useSelector<GlobalStateInterface, DefaultProps>(
     state => state.request.filling
   )
+  const totalValue =
+    requestDough.value +
+    requestEdge.value +
+    requestSize.value +
+    requestFilling.value
 
-  const paymentRequest = ({ filling }: RequestProps) => {
-    dispatch(createRequest({ filling }))
+  const smallCardsWithData = [
+    {
+      id: requestDough.id,
+      type: requestDough.type,
+      value: requestDough.value
+    },
+    {
+      id: requestEdge.id,
+      type: requestEdge.type,
+      value: requestEdge.value
+    },
+    {
+      id: requestSize.id,
+      type: requestSize.type,
+      value: requestSize.value
+    },
+    {
+      id: requestFilling.id,
+      type: requestFilling.type,
+      value: requestFilling.value
+    }
+  ]
+
+  const paymentRequest = async ({ payment }: RequestProps) => {
+    await dispatch(createRequest({ payment }))
+    await api
+      .post('requests', {
+        id: uuid(),
+        dough: requestDough,
+        edge: requestEdge,
+        size: requestSize,
+        filling: requestFilling,
+        payment
+      })
+      .then(response => {
+        if (response.status === 201) {
+          router.push('/')
+          addToast(successRequest)
+        }
+      })
   }
 
-  // Carrega o store do redux com dados
+  // Carrega o store do redux com dados + seta a promocao do dia
   useEffect(() => {
     if (data) {
-      dispatch(readPizzas(data))
+      dispatch(readRecommendations(data))
     }
-  }, [payments, dispatch, data])
+  }, [dispatch, data])
+
+  useEffect(() => {
+    const date = new Date()
+    if (data && recommendations) {
+      const arrayRecommendations = recommendations.filter(item => {
+        return item.id === date.getDay()
+      })[0]
+
+      const { title, description, value, benefitPoints } = arrayRecommendations
+
+      setTodayRecommend({
+        title,
+        description,
+        value,
+        benefitPoints
+      })
+    }
+  }, [recommendations])
 
   // Verifica se dados anteriores ja foram escolhidos
   useEffect(() => {
@@ -81,11 +164,65 @@ const Payment: React.FC = () => {
   }
   return (
     <Layout
-      title="Caixa | Monte sua pizza!"
+      title="Caixa"
       description="Escolha a forma de pagamento"
-      highlightTitle="Escolha o recheio da pizza"
+      highlightTitle="Escolha a forma de pagamento"
     >
-      a
+      <CashierWrapper>
+        <MediumCard elevation="3">
+          <ActionTitle>Não perca a oferta de hoje!</ActionTitle>
+          <IconWp>
+            <SiIfood color="#fff" size={40} />
+          </IconWp>
+          <TitleOffer>{todayRecommend.title}</TitleOffer>
+          <DescriptionOffer>{todayRecommend.description}</DescriptionOffer>
+          <BenefitPoints>
+            + {Math.floor(todayRecommend.benefitPoints * 10)} Pontos
+            <Tooltip>
+              Você ganha {Math.floor(todayRecommend.benefitPoints * 10)} Pontos.
+              Cada ponto vale R$ 0,25 centavos.{' '}
+              <strong>
+                {Math.floor(
+                  todayRecommend.benefitPoints * 10 * 0.25
+                ).toLocaleString('pt-BR', options)}
+              </strong>
+            </Tooltip>
+          </BenefitPoints>
+        </MediumCard>
+        <MediumCard elevation="3">
+          <CashierTitle>Seu pedido</CashierTitle>
+          {smallCardsWithData?.map((card, index) => {
+            return (
+              <SmallCardRow key={`${card.id}__${index}`}>
+                <span>{card.type}</span>
+                <p>{card.value.toLocaleString('pt-BR', options)}</p>
+              </SmallCardRow>
+            )
+          })}
+          <Switch
+            isOn={payWithMoney}
+            handleToggle={() => setPayWithMoney(!payWithMoney)}
+          />
+          <TotalValue>
+            <span>Total</span>
+            <span>{totalValue.toLocaleString('pt-BR', options)}</span>
+          </TotalValue>
+          <PayButton
+            type="submit"
+            onClick={() =>
+              paymentRequest({
+                payment: {
+                  id: uuid(),
+                  type: payWithMoney ? 'Dinheiro' : 'Cartão',
+                  value: totalValue
+                }
+              })
+            }
+          >
+            Finalizar pedido
+          </PayButton>
+        </MediumCard>
+      </CashierWrapper>
     </Layout>
   )
 }

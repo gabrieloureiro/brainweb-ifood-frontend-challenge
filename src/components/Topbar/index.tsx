@@ -17,7 +17,7 @@ import {
   IconWrapper
 } from './styles'
 
-const Topbar: React.FC<TopbarInterface> = ({ highlightTitle }) => {
+const Topbar: React.FC<TopbarInterface> = () => {
   const { theme, changeTheme } = useTheme()
 
   return (

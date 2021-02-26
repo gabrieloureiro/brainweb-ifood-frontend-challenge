@@ -9,5 +9,4 @@ export interface PizzaProps {
   edge: DefaultProps[]
   size: DefaultProps[]
   filling: DefaultProps[]
-  payment: DefaultProps[]
 }

@@ -48,7 +48,7 @@ const Dough: React.FC = () => {
 
   return (
     <Layout
-      title="Massas | Monte sua pizza!"
+      title="Massas da pizza"
       description="Escolha a massa que deseja"
       highlightTitle="Escolha a massa que deseja"
     >

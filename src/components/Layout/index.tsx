@@ -22,10 +22,10 @@ const Layout: React.FC<LayoutInterface> = ({
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title} | iFood</title>
         <meta name="description" content={description}></meta>
       </Head>
-      <Topbar highlightTitle="Pizza Center" />
+      <Topbar />
       <Container>
         <Title>{highlightTitle}</Title>
         {router.pathname !== '/' ? (

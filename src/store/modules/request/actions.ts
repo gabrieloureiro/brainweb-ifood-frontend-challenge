@@ -11,7 +11,8 @@ export const createRequest = ({
   dough,
   edge,
   filling,
-  size
+  size,
+  payment
 }: RequestProps): any => {
   return {
     type: 'CREATE_REQUEST',
@@ -19,7 +20,8 @@ export const createRequest = ({
       dough,
       edge,
       filling,
-      size
+      size,
+      payment
     }
   }
 }

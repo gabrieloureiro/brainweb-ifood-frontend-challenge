@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { IconWrapperProps } from './types'
 
-export const StyledBar = styled.div`
+export const StyledBar = styled.header`
   display: flex;
   justify-content: center;
   position: fixed;

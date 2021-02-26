@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+
+import { lighten, shade } from 'polished'
 import styled from 'styled-components'
 
 export const StyledContainer = styled.div`
@@ -14,5 +16,20 @@ export const StyledContainer = styled.div`
     margin: 0 auto;
     display: block;
     max-width: 1180px;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 24px;
+    left: 40%;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    max-width: 1180px;
+    color: ${({ theme }) =>
+    theme.title === 'light'
+      ? lighten(0.4, theme.text)
+      : shade(0.4, theme.text)};
+    font-size: 14px;
   }
 `

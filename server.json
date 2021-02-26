@@ -1,52 +1,52 @@
 {
   "recommendations": [
     {
-      "id": 1,
+      "id": 0,
       "title": "Super pepperoni",
       "description": "1x Pizza grande de pepperoni (Massa grossa + Borda de cream cheese)",
-      "value": 29.40,
+      "value": 29.4,
       "benefitPoints": 1.72
     },
     {
-      "id": 2,
+      "id": 1,
       "title": "Minion's de Frango",
       "description": "2x pizzas pequenas de frango (Massa fina + Borda padrão)",
-      "value": 23.90,
+      "value": 23.9,
       "benefitPoints": 1.19
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "Combo Gêmeas",
       "description": "2x Pizzas médias de frango (Massa caseira + Borda de requeijão)",
-      "value": 49.90,
+      "value": 49.9,
       "benefitPoints": 2.49
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "Combo econômico",
       "description": "2x Pizzas grandes de calabresa + Refrigerante 2L (Massa grossa + Borda de cheddar)",
-      "value": 45.90,
+      "value": 45.9,
       "benefitPoints": 2.29
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "Tem pra todo mundo!",
       "description": "2x Pizzas grandes de frango c/ pepperoni (Massa caseira + Borda de cream cheese)",
-      "value": 43.90,
+      "value": 43.9,
       "benefitPoints": 2.19
     },
     {
-      "id": 6,
+      "id": 5,
       "title": "Combo Itália",
       "description": "2x Pizzas grandes de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
-      "value": 54.90,
+      "value": 54.9,
       "benefitPoints": 2.74
     },
     {
-      "id": 7,
+      "id": 6,
       "title": "Combo fim de tarde",
       "description": "4x Pizzas pequenas de frango + 2x Refrigerante 600ml (Massa caseira + Borda padrão)",
-      "value": 49.90,
+      "value": 49.9,
       "benefitPoints": 2.49
     }
   ],
@@ -55,69 +55,184 @@
       {
         "id": 1,
         "type": "Massa fina",
-        "value": 3.50
+        "value": 3.5
       },
       {
         "id": 2,
         "type": "Massa caseira",
-        "value": 4.00
+        "value": 4
       },
       {
         "id": 3,
         "type": "Massa grossa",
-        "value": 4.50
+        "value": 4.5
       }
     ],
     "edge": [
       {
         "id": 1,
         "type": "Borda padrão",
-        "value": 0.00
+        "value": 0
       },
       {
         "id": 2,
         "type": "Borda de cheddar",
-        "value": 2.00
+        "value": 2
       },
       {
         "id": 3,
         "type": "Borda de cream cheese",
-        "value": 4.00
+        "value": 4
       }
     ],
     "size": [
       {
         "id": 1,
         "type": "Pequena",
-        "value": 4.00
+        "value": 4
       },
       {
         "id": 2,
         "type": "Média",
-        "value": 5.00
+        "value": 5
       },
       {
         "id": 3,
         "type": "Grande",
-        "value": 6.00
+        "value": 6
       }
     ],
     "filling": [
       {
         "id": 1,
         "type": "Calabresa",
-        "value": 12.90
+        "value": 12.9
       },
       {
         "id": 2,
         "type": "Frango",
-        "value": 13.90
+        "value": 13.9
       },
       {
         "id": 3,
         "type": "Pepperoni",
-        "value": 19.90
+        "value": 19.9
       }
     ]
-  }
+  },
+  "requests": [
+    {},
+    {
+      "id": "e5e985a1-2652-4f79-af54-bdfb6332a83f",
+      "dough": {
+        "id": 1,
+        "type": "Massa fina",
+        "value": 3.5
+      },
+      "edge": {
+        "id": 2,
+        "type": "Borda de cheddar",
+        "value": 2
+      },
+      "size": {
+        "id": 2,
+        "type": "Média",
+        "value": 5
+      },
+      "filling": {
+        "id": 2,
+        "type": "Frango",
+        "value": 13.9
+      },
+      "payment": {
+        "id": "ef4fab0d-8cb7-4df5-9384-f515070e1bd6",
+        "type": "Dinheiro",
+        "value": 24.4
+      }
+    },
+    {
+      "id": "ca62aead-7e39-4ac9-9f35-7c65b972108b",
+      "dough": {
+        "id": 1,
+        "type": "Massa fina",
+        "value": 3.5
+      },
+      "edge": {
+        "id": 1,
+        "type": "Borda padrão",
+        "value": 0
+      },
+      "size": {
+        "id": 1,
+        "type": "Pequena",
+        "value": 4
+      },
+      "filling": {
+        "id": 2,
+        "type": "Frango",
+        "value": 13.9
+      },
+      "payment": {
+        "id": "0337e891-0a1d-4f0a-a014-6aecee10ff75",
+        "type": "Cartão",
+        "value": 21.4
+      }
+    },
+    {
+      "id": "7ce94677-e3c9-4e08-aea7-525d61521db5",
+      "dough": {
+        "id": 3,
+        "type": "Massa grossa",
+        "value": 4.5
+      },
+      "edge": {
+        "id": 3,
+        "type": "Borda de cream cheese",
+        "value": 4
+      },
+      "size": {
+        "id": 2,
+        "type": "Média",
+        "value": 5
+      },
+      "filling": {
+        "id": 3,
+        "type": "Pepperoni",
+        "value": 19.9
+      },
+      "payment": {
+        "id": "e319fd14-c657-4968-8d06-7700d29afd0f",
+        "type": "Dinheiro",
+        "value": 33.4
+      }
+    },
+    {
+      "id": "49f9123e-6afe-4f20-9c79-b21cd74e252d",
+      "dough": {
+        "id": 1,
+        "type": "Massa fina",
+        "value": 3.5
+      },
+      "edge": {
+        "id": 1,
+        "type": "Borda padrão",
+        "value": 0
+      },
+      "size": {
+        "id": 2,
+        "type": "Média",
+        "value": 5
+      },
+      "filling": {
+        "id": 1,
+        "type": "Calabresa",
+        "value": 12.9
+      },
+      "payment": {
+        "id": "0829b673-5465-4bb9-82eb-b7b5298e3c13",
+        "type": "Cartão",
+        "value": 21.4
+      }
+    }
+  ]
 }
