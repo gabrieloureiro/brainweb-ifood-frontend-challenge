@@ -10,8 +10,6 @@
     "start": "next build && next start"
   },
   "dependencies": {
-    "@unform/core": "^2.1.5",
-    "@unform/web": "^2.1.5",
     "axios": "^0.21.1",
     "framer-motion": "^3.7.0",
     "immer": "^8.0.1",
@@ -27,8 +25,7 @@
     "redux-persist": "^6.0.0",
     "styled-components": "^5.2.1",
     "swr": "^0.4.2",
-    "uuid": "^8.3.2",
-    "yup": "^0.32.8"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.29.6",
@@ -45,7 +42,6 @@
     "@types/redux-persist": "^4.3.1",
     "@types/styled-components": "^5.1.7",
     "@types/uuid": "^8.3.0",
-    "@types/yup": "^0.29.11",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.15.0",
     "babel-jest": "^26.6.3",
