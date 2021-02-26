@@ -64,7 +64,7 @@ const Size: React.FC = () => {
 
   return (
     <Layout
-      title="Tamanho | Monte sua pizza!"
+      title="Tamanho da pizza"
       description="Escolha o tamanho da pizza"
       highlightTitle="Escolha o tamanho da pizza"
     >

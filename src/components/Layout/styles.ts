@@ -29,6 +29,7 @@ export const StepperButton = styled.div`
 
   span {
     font-size: 14px;
+    color: #fff;
   }
 
   &:hover {

@@ -1,5 +1,5 @@
-export interface RecommendationProps {
-  id: number
+export interface RecommendProps {
+  id?: number
   title: string
   description: string
   value: number

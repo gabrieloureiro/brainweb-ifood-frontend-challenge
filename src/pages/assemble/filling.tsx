@@ -69,7 +69,7 @@ const Filling: React.FC = () => {
   }
   return (
     <Layout
-      title="Recheio | Monte sua pizza!"
+      title="Recheio da pizza"
       description="Escolha o recheio da pizza"
       highlightTitle="Escolha o recheio da pizza"
     >

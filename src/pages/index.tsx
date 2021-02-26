@@ -1,13 +1,14 @@
-import React, { useEffect, memo } from 'react'
+import React, { useEffect, memo, useState } from 'react'
 import Link from 'next/link'
 
 import { useToast } from '@/hooks/useToast'
 import { useFetch } from '@/hooks/useFetch'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { readPizzas } from '@/store/modules/pizza/actions'
 
 import homeCards from '@/models/homeCards'
+import { welcomeInfo } from '@/utils/infoToastMessages'
 
 import GRADIENT_ANIMATION from '@/animations/gradientAside'
 
@@ -24,6 +25,8 @@ import {
   IconWrapper,
   AnimatedContainer
 } from '@/styles/screens/index'
+import { GlobalStateInterface } from '@/store/modules/rootReducer'
+import { DefaultProps } from '@/models/pizza'
 
 const icons = {
   giFullPizza: <GiFullPizza color="#FFF" size={48} />,
@@ -34,8 +37,11 @@ const icons = {
 const Home: React.FC = () => {
   const { data } = useFetch('pizzas')
   const dispatch = useDispatch()
-
   const { addToast } = useToast()
+
+  const requestDough = useSelector<GlobalStateInterface, DefaultProps>(
+    state => state.request.dough
+  )
 
   useEffect(() => {
     if (data) {
@@ -44,12 +50,9 @@ const Home: React.FC = () => {
   }, [data, dispatch])
 
   useEffect(() => {
-    addToast({
-      title: 'Seja bem vindo!',
-      description:
-        'Esse é o desafio da Brainweb + iFood feito por Gabriel Loureiro',
-      type: 'info'
-    })
+    if (!requestDough) {
+      addToast(welcomeInfo)
+    }
   }, [])
 
   if (!data) {
@@ -58,7 +61,7 @@ const Home: React.FC = () => {
 
   return (
     <Layout
-      title="iFood + Brainweb | Monte sua pizza!"
+      title="Hub"
       description="Monte sua melhor pizza e realize o pedido."
       highlightTitle="Escolha uma opção para continuar"
     >
