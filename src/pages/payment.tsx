@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useEffect, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import Layout from '@/components/Layout'
@@ -5,7 +6,7 @@ import Loader from '@/components/Loader'
 import { useFetch } from '@/hooks/useFetch'
 import { DefaultProps } from '@/models/pizza'
 import { RequestProps } from '@/models/request'
-import { createRequest } from '@/store/modules/request/actions'
+import { clearRequest, createRequest } from '@/store/modules/request/actions'
 import { GlobalStateInterface } from '@/store/modules/rootReducer'
 
 import options from '@/utils/toLocaleStringOptions'
@@ -47,6 +48,7 @@ const Payment: React.FC = () => {
   const dispatch = useDispatch()
   const [todayRecommend, setTodayRecommend] = useState({} as RecommendProps)
   const [payWithMoney, setPayWithMoney] = useState(false)
+  const [totalValue, setTotalValue] = useState(0)
 
   const recommendations = useSelector<GlobalStateInterface, RecommendProps[]>(
     state => state.recommendations
@@ -63,32 +65,27 @@ const Payment: React.FC = () => {
   const requestFilling = useSelector<GlobalStateInterface, DefaultProps>(
     state => state.request.filling
   )
-  const totalValue =
-    requestDough.value +
-    requestEdge.value +
-    requestSize.value +
-    requestFilling.value
 
   const smallCardsWithData = [
     {
-      id: requestDough.id,
-      type: requestDough.type,
-      value: requestDough.value
+      id: requestDough?.id,
+      type: requestDough?.type,
+      value: requestDough?.value
     },
     {
-      id: requestEdge.id,
-      type: requestEdge.type,
-      value: requestEdge.value
+      id: requestEdge?.id,
+      type: requestEdge?.type,
+      value: requestEdge?.value
     },
     {
-      id: requestSize.id,
-      type: requestSize.type,
-      value: requestSize.value
+      id: requestSize?.id,
+      type: requestSize?.type,
+      value: requestSize?.value
     },
     {
-      id: requestFilling.id,
-      type: requestFilling.type,
-      value: requestFilling.value
+      id: requestFilling?.id,
+      type: requestFilling?.type,
+      value: requestFilling?.value
     }
   ]
 
@@ -107,9 +104,21 @@ const Payment: React.FC = () => {
         if (response.status === 201) {
           router.push('/')
           addToast(successRequest)
+          setTimeout(() => {
+            dispatch(clearRequest({}))
+          }, 1500)
         }
       })
   }
+
+  useEffect(() => {
+    setTotalValue(
+      requestDough?.value +
+      requestEdge?.value +
+      requestSize?.value +
+      requestFilling?.value
+    )
+  }, [requestDough, requestEdge, requestSize, requestFilling])
 
   // Carrega o store do redux com dados + seta a promocao do dia
   useEffect(() => {
@@ -169,26 +178,28 @@ const Payment: React.FC = () => {
       highlightTitle="Escolha a forma de pagamento"
     >
       <CashierWrapper>
-        <MediumCard elevation="3">
-          <ActionTitle>Não perca a oferta de hoje!</ActionTitle>
-          <IconWp>
-            <SiIfood color="#fff" size={40} />
-          </IconWp>
-          <TitleOffer>{todayRecommend.title}</TitleOffer>
-          <DescriptionOffer>{todayRecommend.description}</DescriptionOffer>
-          <BenefitPoints>
-            + {Math.floor(todayRecommend.benefitPoints * 10)} Pontos
-            <Tooltip>
-              Você ganha {Math.floor(todayRecommend.benefitPoints * 10)} Pontos.
-              Cada ponto vale R$ 0,25 centavos.{' '}
-              <strong>
-                {Math.floor(
-                  todayRecommend.benefitPoints * 10 * 0.25
-                ).toLocaleString('pt-BR', options)}
-              </strong>
-            </Tooltip>
-          </BenefitPoints>
-        </MediumCard>
+        <Link href="/recommendations">
+          <MediumCard elevation="3">
+            <ActionTitle>Não perca a oferta de hoje!</ActionTitle>
+            <IconWp>
+              <SiIfood color="#fff" size={40} />
+            </IconWp>
+            <TitleOffer>{todayRecommend.title}</TitleOffer>
+            <DescriptionOffer>{todayRecommend.description}</DescriptionOffer>
+            <BenefitPoints>
+              + {Math.floor(todayRecommend.benefitPoints * 10)} Pontos
+              <Tooltip>
+                Você ganha {Math.floor(todayRecommend.benefitPoints * 10)}{' '}
+                Pontos. Cada ponto vale R$ 0,25 centavos.{' '}
+                <strong>
+                  {Math.floor(
+                    todayRecommend.benefitPoints * 10 * 0.25
+                  ).toLocaleString('pt-BR', options)}
+                </strong>
+              </Tooltip>
+            </BenefitPoints>
+          </MediumCard>
+        </Link>
         <MediumCard elevation="3">
           <CashierTitle>Seu pedido</CashierTitle>
           {smallCardsWithData?.map((card, index) => {

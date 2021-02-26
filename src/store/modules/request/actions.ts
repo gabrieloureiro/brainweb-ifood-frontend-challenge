@@ -25,3 +25,10 @@ export const createRequest = ({
     }
   }
 }
+
+export const clearRequest = (request: RequestProps): any => {
+  return {
+    type: 'CLEAR_REQUEST',
+    payload: request
+  }
+}

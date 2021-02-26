@@ -233,6 +233,174 @@
         "type": "Cartão",
         "value": 21.4
       }
+    },
+    {
+      "id": "d9266615-e8e5-47f8-8fa7-f21ed4faa967",
+      "dough": {
+        "id": 2,
+        "type": "Massa caseira",
+        "value": 4
+      },
+      "edge": {
+        "id": 2,
+        "type": "Borda de cheddar",
+        "value": 2
+      },
+      "size": {
+        "id": 2,
+        "type": "Média",
+        "value": 5
+      },
+      "filling": {
+        "id": 2,
+        "type": "Frango",
+        "value": 13.9
+      },
+      "payment": {
+        "id": "d7151b5f-dcd8-445f-98c7-b3d96504f9c6",
+        "type": "Dinheiro",
+        "value": 24.9
+      }
+    },
+    {
+      "id": "d5b69c78-2009-4933-9b27-bc10a1ecbcf4",
+      "dough": {
+        "id": 2,
+        "type": "Massa caseira",
+        "value": 4
+      },
+      "edge": {
+        "id": 3,
+        "type": "Borda de cream cheese",
+        "value": 4
+      },
+      "size": {
+        "id": 3,
+        "type": "Grande",
+        "value": 6
+      },
+      "filling": {
+        "id": 3,
+        "type": "Pepperoni",
+        "value": 19.9
+      },
+      "payment": {
+        "id": "c1f4a623-55a8-4a01-9e71-8bdb0d1bc994",
+        "type": "Dinheiro",
+        "value": 33.9
+      }
+    },
+    {
+      "id": "bed42edf-50ea-49a2-bc78-412241937294",
+      "dough": {
+        "id": 2,
+        "type": "Massa caseira",
+        "value": 4
+      },
+      "edge": {
+        "id": 2,
+        "type": "Borda de cheddar",
+        "value": 2
+      },
+      "size": {
+        "id": 2,
+        "type": "Média",
+        "value": 5
+      },
+      "filling": {
+        "id": 2,
+        "type": "Frango",
+        "value": 13.9
+      },
+      "payment": {
+        "id": "3e6dfd77-bc62-4bbd-bc5f-b43416e969b0",
+        "type": "Dinheiro",
+        "value": 24.9
+      }
+    },
+    {
+      "id": "1e703031-24cb-4313-87c2-1617f9e2036b",
+      "dough": {
+        "id": 2,
+        "type": "Massa caseira",
+        "value": 4
+      },
+      "edge": {
+        "id": 2,
+        "type": "Borda de cheddar",
+        "value": 2
+      },
+      "size": {
+        "id": 2,
+        "type": "Média",
+        "value": 5
+      },
+      "filling": {
+        "id": 2,
+        "type": "Frango",
+        "value": 13.9
+      },
+      "payment": {
+        "id": "54dee67a-81e5-4337-a9ea-0d6d3d96c43f",
+        "type": "Dinheiro",
+        "value": 24.9
+      }
+    },
+    {
+      "id": "f08bb515-9b07-41ad-b4ce-3957f3e3a3a1",
+      "dough": {
+        "id": 1,
+        "type": "Massa fina",
+        "value": 3.5
+      },
+      "edge": {
+        "id": 1,
+        "type": "Borda padrão",
+        "value": 0
+      },
+      "size": {
+        "id": 1,
+        "type": "Pequena",
+        "value": 4
+      },
+      "filling": {
+        "id": 1,
+        "type": "Calabresa",
+        "value": 12.9
+      },
+      "payment": {
+        "id": "98888011-06a5-4436-8a6c-72aa3935f8b5",
+        "type": "Dinheiro",
+        "value": 20.4
+      }
+    },
+    {
+      "id": "55293229-e863-44e2-85d9-2eaa77fb84ce",
+      "dough": {
+        "id": 1,
+        "type": "Massa fina",
+        "value": 3.5
+      },
+      "edge": {
+        "id": 1,
+        "type": "Borda padrão",
+        "value": 0
+      },
+      "size": {
+        "id": 1,
+        "type": "Pequena",
+        "value": 4
+      },
+      "filling": {
+        "id": 1,
+        "type": "Calabresa",
+        "value": 12.9
+      },
+      "payment": {
+        "id": "ba86754b-d561-47f7-b1f2-5abcbbfaecfb",
+        "type": "Dinheiro",
+        "value": 20.4
+      }
     }
   ]
 }

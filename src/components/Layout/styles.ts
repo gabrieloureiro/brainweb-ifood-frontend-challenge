@@ -65,6 +65,11 @@ export const StepperButton = styled.div`
       display: none;
     }
   }
+
+  @media screen and (max-width: 450px) {
+    left: 24px;
+    bottom: 12px;
+  }
 `
 
 export const FloatChat = styled.a`
@@ -79,7 +84,7 @@ export const FloatChat = styled.a`
   right: 50px;
   bottom: 50px;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
   text-decoration: none;
   z-index: 5;
 
@@ -92,6 +97,11 @@ export const FloatChat = styled.a`
       opacity: 1;
       visibility: visible;
     }
+  }
+
+  @media screen and (max-width: 450px) {
+    right: 24px;
+    bottom: 12px;
   }
 `
 

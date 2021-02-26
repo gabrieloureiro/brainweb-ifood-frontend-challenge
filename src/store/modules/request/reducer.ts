@@ -3,22 +3,9 @@ import { RequestProps } from '@/models/request'
 import produce from 'immer'
 import { Reducer } from 'redux'
 
-const CREATE_REQUEST = 'CREATE_REQUEST'
-const READ_REQUEST = 'READ_REQUEST'
-
-interface ReadRequestActionTypes {
-  type: typeof READ_REQUEST
-  payload: RequestProps
-}
-
-export interface CreateRequestActionTypes {
-  type: typeof CREATE_REQUEST
-  payload: RequestProps
-}
-
 const request: Reducer<RequestProps> = (
   state = {} as RequestProps,
-  action: ReadRequestActionTypes | CreateRequestActionTypes
+  action: any
 ): any => {
   return produce(state, draft => {
     switch (action.type) {
@@ -38,6 +25,9 @@ const request: Reducer<RequestProps> = (
           size: size || draft.size,
           payment: payment || draft.payment
         }
+      }
+      case 'CLEAR_REQUEST': {
+        return {}
       }
       default: {
         return state
