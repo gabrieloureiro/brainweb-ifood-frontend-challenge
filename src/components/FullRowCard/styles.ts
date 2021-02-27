@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+import { motion } from 'framer-motion'
 import { lighten } from 'polished'
 import styled, { css } from 'styled-components'
 
@@ -16,7 +18,7 @@ const indexVariations = {
   `
 }
 
-export const FullCard = styled.div<FullRowCardProps>`
+export const FullCard = styled(motion.div) <FullRowCardProps>`
   display: flex;
   flex-direction: column;
   padding: 24px;

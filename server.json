@@ -17,7 +17,7 @@
     {
       "id": 2,
       "title": "Combo Gêmeas",
-      "description": "2x Pizzas médias de frango (Massa caseira + Borda de requeijão)",
+      "description": "2x Pizzas médias de frango (Massa caseira + Borda de cheddar)",
       "value": 49.9,
       "benefitPoints": 2.49
     },
@@ -31,7 +31,7 @@
     {
       "id": 4,
       "title": "Tem pra todo mundo!",
-      "description": "2x Pizzas grandes de frango c/ pepperoni (Massa caseira + Borda de cream cheese)",
+      "description": "2x Pizzas grandes de frango (Massa caseira + Borda de cream cheese)",
       "value": 43.9,
       "benefitPoints": 2.19
     },
@@ -148,6 +148,22 @@
         "type": "Dinheiro",
         "value": 24.4
       }
+    }
+  ],
+  "requestsRecommendations": [
+    {
+      "id": "6165a006-7f2e-43e6-9a68-c397f832e072",
+      "title": "Combo Itália",
+      "description": "2x Pizzas grandes de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
+      "benefitPoints": 2.74,
+      "value": 54.9
+    },
+    {
+      "id": "1f40778d-aee1-46ff-8358-2549e5489d4d",
+      "title": "Combo Itália",
+      "description": "2x Pizzas grandes de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
+      "benefitPoints": 2.74,
+      "value": 54.9
     }
   ]
 }

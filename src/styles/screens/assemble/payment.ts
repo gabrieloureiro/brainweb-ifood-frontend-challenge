@@ -105,6 +105,7 @@ export const SmallCardRow = styled.div`
       : shade(0.05, theme.content)};
   border-radius: 5px;
   padding: 16px;
+  position: relative;
 
   span {
     cursor: text;
@@ -131,6 +132,7 @@ export const SmallCardRow = styled.div`
   }
 
   @media screen and (max-width: 450px) {
+    height: auto;
     span {
       font-size: 16px;
     }

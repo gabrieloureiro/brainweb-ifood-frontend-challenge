@@ -1,117 +1,65 @@
 import styled, { css } from 'styled-components'
-
+import { shade } from 'polished'
 import { motion } from 'framer-motion'
 
-import { Card as StyledCard } from '@/components/Card'
+import Button from '@/components/Button'
 
-interface IconWrapperProps {
-  type: string
-}
-
-export const backgroundIconVariations = {
-  giFullPizza: css`
-    background: ${({ theme }) => theme.primary};
-  `,
-  mdLocalOffer: css`
-    background: ${({ theme }) => theme.yellow};
-  `,
-  ioRocketOutline: css`
-    background: ${({ theme }) => theme.blue};
-  `
-}
-
-export const CardList = styled.ul`
+export const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  z-index: 2;
-
-  @media screen and (max-width: 1130px) {
-    flex-direction: column;
-  }
-`
-
-export const CardListItem = styled.li`
-  z-index: 2;
-
-  &:first-child {
-    div {
-      border-bottom: 2px solid ${({ theme }) => theme.primary};
-
-      &:hover {
-        border-color: ${({ theme }) => theme.primary};
-      }
-    }
-  }
-
-  &:nth-child(2) {
-    div {
-      border-bottom: 2px solid ${({ theme }) => theme.yellow};
-
-      &:hover {
-        border-color: ${({ theme }) => theme.yellow};
-      }
-    }
-  }
-
-  &:last-child {
-    div {
-      border-bottom: 2px solid ${({ theme }) => theme.blue};
-
-      &:hover {
-        border-color: ${({ theme }) => theme.blue};
-      }
-    }
-  }
-
-  &:not(:last-child) {
-    margin-right: 16px;
-  }
-
-  @media screen and (max-width: 1130px) {
-    &:not(:last-child) {
-      margin-right: 0px;
-      margin-bottom: 16px;
-    }
-  }
-`
-
-export const IconWrapper = styled.div<IconWrapperProps>`
-  padding: 16px;
-  border-radius: 5px;
-  border: 0 !important;
-
-  ${props => backgroundIconVariations[props.type]}
-`
-
-export const Card = styled(StyledCard)`
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 2;
-  border-radius: 5px 5px 0px 0px;
-
-  span {
-    font-size: 24px;
-    line-height: 34px;
-    font-weight: bold;
-    padding: 16px 0;
-  }
-
-  p {
-    font-size: 14px;
-    color: ${({ theme }) => theme.auxText};
-  }
+  width: 100%;
+  height: 100%;
+  padding: 3.2rem;
+  position: relative;
+  flex: 1;
 `
 
-export const AnimatedContainer = styled(motion.aside)`
-  max-width: 100%;
-  height: 6.4rem;
-  align-self: flex-start;
+export const AnimatedContainer = styled(motion.main)`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3.2rem;
+    background: ${theme.body};
+    border-radius: 5px;
+    box-shadow: box-shadow: 0px 20px 25px #0000001a;
+
+    h1 svg {
+      width: 12rem !important;
+      height: auto !important;
+    }
+
+    h2 {
+      font-size: 24px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    img {
+      max-width: 120px;
+      max-height: 45px;
+    }
+
+  `}
+`
+
+export const EnterButton = styled(Button)`
+  ${({ theme }) => css`
+    width: 400px;
+    margin-top: 1.2rem;
+    color: #fff;
+    background: ${shade(0.2, theme.primary)};
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      background: ${shade(0.4, theme.primary)};
+    }
+  `}
+`
+export const FloatThemeChanger = styled.div`
   position: absolute;
-  z-index: 1;
-  top: 80%;
-  left: 0;
-  background: ${({ theme }) =>
-    `linear-gradient(90deg, ${theme.primary} 20%, ${theme.yellow} 40%, ${theme.blue} 100%)`};
+  top: 64px;
+  cursor: pointer;
 `

@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { motion } from 'framer-motion'
 import { lighten, shade } from 'polished'
 import styled from 'styled-components'
 
@@ -9,6 +10,15 @@ export const Image = styled.img`
   object-fit: cover;
   vertical-align: middle;
 `
+
+export const InfoDeveloper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+`
+
 export const LargeText = styled.h2`
   margin-top: 24px;
   font-size: 32px;

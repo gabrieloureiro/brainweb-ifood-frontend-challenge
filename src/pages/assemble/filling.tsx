@@ -1,25 +1,30 @@
+import React, { useEffect } from 'react'
+import Link from 'next/link'
+
+import { GlobalStateInterface } from '@/store/modules/rootReducer'
+import { DefaultProps } from '@/models/pizza'
+import { RequestProps } from '@/models/request'
+
+import { useRouter } from 'next/router'
+import { useFetch } from '@/hooks/useFetch'
+import { useToast } from '@/hooks/useToast'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { readPizzas } from '@/store/modules/pizza/actions'
+import { createRequest } from '@/store/modules/request/actions'
+
+import { doughError, edgeError, sizeError } from '@/utils/errorToastMessages'
+import options from '@/utils/toLocaleStringOptions'
+
 import FullRowCard from '@/components/FullRowCard'
 import Layout from '@/components/Layout'
 import Loader from '@/components/Loader'
-import { useFetch } from '@/hooks/useFetch'
-import { useToast } from '@/hooks/useToast'
-import { DefaultProps } from '@/models/pizza'
-import { RequestProps } from '@/models/request'
-import { readPizzas } from '@/store/modules/pizza/actions'
-import { createRequest } from '@/store/modules/request/actions'
-import { GlobalStateInterface } from '@/store/modules/rootReducer'
+import { SiIfood } from 'react-icons/si'
 import {
   FullRowCardList,
   FullRowCardListItem,
   IconWrapper
 } from '@/styles/screens/assemble'
-import { doughError, edgeError, sizeError } from '@/utils/errorToastMessages'
-import options from '@/utils/toLocaleStringOptions'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
-import { SiIfood } from 'react-icons/si'
-import { useDispatch, useSelector } from 'react-redux'
 
 const Filling: React.FC = () => {
   const router = useRouter()
@@ -76,7 +81,7 @@ const Filling: React.FC = () => {
       <FullRowCardList>
         {fillings?.map(item => {
           return (
-            <Link key={item.id} href="/payment">
+            <Link key={item.id} href="/assemble/payment">
               <FullRowCardListItem
                 onClick={() =>
                   fillingRequest({

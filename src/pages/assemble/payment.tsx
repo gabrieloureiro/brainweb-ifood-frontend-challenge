@@ -1,25 +1,35 @@
 /* eslint-disable prettier/prettier */
 import React, { useEffect, useState } from 'react'
-import { v4 as uuid } from 'uuid'
-import Layout from '@/components/Layout'
-import Loader from '@/components/Loader'
-import { useFetch } from '@/hooks/useFetch'
-import { DefaultProps } from '@/models/pizza'
-import { RequestProps } from '@/models/request'
-import { clearRequest, createRequest } from '@/store/modules/request/actions'
-import { GlobalStateInterface } from '@/store/modules/rootReducer'
-
-import options from '@/utils/toLocaleStringOptions'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useDispatch, useSelector } from 'react-redux'
+
+import { GlobalStateInterface } from '@/store/modules/rootReducer'
+import { DefaultProps } from '@/models/pizza'
+import { RecommendProps } from '@/models/recommendations'
+import { RequestProps } from '@/models/request'
+
 import { useToast } from '@/hooks/useToast'
+import { useRouter } from 'next/router'
+import { useFetch } from '@/hooks/useFetch'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { clearRequest, createRequest } from '@/store/modules/request/actions'
+import { readRecommendations } from '@/store/modules/recommendations/actions'
+
+import api from '@/services/api'
+import { v4 as uuid } from 'uuid'
+import options from '@/utils/toLocaleStringOptions'
+import { successRequest } from '@/utils/successToastMessages'
 import {
   doughError,
   edgeError,
   fillingError,
   sizeError
 } from '@/utils/errorToastMessages'
+
+import Layout from '@/components/Layout'
+import Loader from '@/components/Loader'
+import Switch from '@/components/Switch'
+import { SiIfood } from 'react-icons/si'
 import {
   CashierWrapper,
   MediumCard,
@@ -33,22 +43,16 @@ import {
   TotalValue,
   PayButton,
   CashierTitle
-} from '@/styles/screens/payments'
-import { readRecommendations } from '@/store/modules/recommendations/actions'
-import { RecommendProps } from '@/models/recommendations'
-import { SiIfood } from 'react-icons/si'
-import Switch from '@/components/Switch'
-import api from '@/services/api'
-import { successRequest } from '@/utils/successToastMessages'
+} from '@/styles/screens/assemble/payment'
 
-const Payment: React.FC = () => {
+const PaymentAssemble: React.FC = () => {
   const router = useRouter()
   const { data } = useFetch('recommendations')
   const { addToast } = useToast()
-  const dispatch = useDispatch()
   const [todayRecommend, setTodayRecommend] = useState({} as RecommendProps)
   const [payWithMoney, setPayWithMoney] = useState(false)
   const [totalValue, setTotalValue] = useState(0)
+  const dispatch = useDispatch()
 
   const recommendations = useSelector<GlobalStateInterface, RecommendProps[]>(
     state => state.recommendations
@@ -102,7 +106,7 @@ const Payment: React.FC = () => {
       })
       .then(response => {
         if (response.status === 201) {
-          router.push('/')
+          router.push('/hub')
           addToast(successRequest)
           setTimeout(() => {
             dispatch(clearRequest({}))
@@ -238,4 +242,4 @@ const Payment: React.FC = () => {
   )
 }
 
-export default Payment
+export default PaymentAssemble

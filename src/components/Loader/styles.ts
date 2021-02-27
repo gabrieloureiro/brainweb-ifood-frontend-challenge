@@ -52,6 +52,8 @@ export const StyledLoader = styled.div<LoaderInterface>`
   transform: translateZ(0);
   -webkit-animation: ${load} 1s infinite linear;
   animation: ${load} 1s infinite linear;
+  width: 70px;
+  height: 70px;
 
   ${props => sizeVariations[props.size || 'medium']}
 

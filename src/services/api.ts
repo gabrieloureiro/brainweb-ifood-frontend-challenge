@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://ifood-brainweb.herokuapp.com/',
+  baseURL: 'http://ifood-brainweb.herokuapp.com/',
   responseType: 'json',
   headers: {
     'content-type': 'application/json',

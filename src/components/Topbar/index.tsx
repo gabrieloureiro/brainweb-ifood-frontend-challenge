@@ -2,43 +2,25 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import Link from 'next/link'
-import { useTheme } from '@/hooks/useTheme'
 
 import { TopbarInterface } from './types'
 
-import { FaSun, FaMoon } from 'react-icons/fa'
-
-import {
-  StyledBar,
-  Brand,
-  Avatar,
-  Logos,
-  Wrapper,
-  IconWrapper
-} from './styles'
+import { StyledBar, Brand, Logos, Wrapper } from './styles'
+import AccountDropdown from '../AccountDropdown'
 
 const Topbar: React.FC<TopbarInterface> = () => {
-  const { theme, changeTheme } = useTheme()
-
   return (
     <StyledBar>
-      <Wrapper>
-        <Logos>
-          <Link href="/">
+      <Wrapper >
+        <Logos >
+          <Link href="/hub">
             <Brand src="/images/ifood.png" alt="ifood" />
           </Link>
-          <Link href="/">
+          <Link href="/hub">
             <Brand src="/images/brainweb.png" alt="brainweb" />
           </Link>
         </Logos>
-        <IconWrapper onClick={() => changeTheme(theme)}>
-          {theme.title === 'dark' ? (
-            <FaSun color="#ffa500" size={16} />
-          ) : (
-              <FaMoon color="#3172b7" size={16} />
-            )}
-        </IconWrapper>
-        <Avatar src="/images/gl.jpg" alt="avatar" />
+        <AccountDropdown />
       </Wrapper>
     </StyledBar>
   )
