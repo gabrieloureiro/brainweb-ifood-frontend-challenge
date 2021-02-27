@@ -11,6 +11,7 @@ import { ImWhatsapp } from 'react-icons/im'
 
 import { FloatChat, Message, StepperButton, Title } from './styles'
 import { FiChevronLeft } from 'react-icons/fi'
+import { CONTAINER_ANIMATION, DEFAULT_TRANSITION } from '@/animations'
 
 const Layout: React.FC<LayoutInterface> = ({
   title,
@@ -27,8 +28,16 @@ const Layout: React.FC<LayoutInterface> = ({
       </Head>
       <Topbar />
       <Container>
-        <Title>{highlightTitle}</Title>
-        {router.pathname !== '/' ? (
+        <Title
+          variants={CONTAINER_ANIMATION}
+          initial="unMounted"
+          animate="mounted"
+          exit="unMounted"
+          transition={DEFAULT_TRANSITION}
+        >
+          {highlightTitle}
+        </Title>
+        {router.pathname !== '/hub' ? (
           <StepperButton onClick={() => router.back()}>
             <FiChevronLeft color="#FFF" size={24} />
             <span>Voltar</span>

@@ -1,25 +1,30 @@
 import React, { useEffect } from 'react'
+import Link from 'next/link'
+
+import { GlobalStateInterface } from '@/store/modules/rootReducer'
+import { DefaultProps } from '@/models/pizza'
+import { RequestProps } from '@/models/request'
+
+import { useRouter } from 'next/router'
+import { useFetch } from '@/hooks/useFetch'
+import { useToast } from '@/hooks/useToast'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { createRequest } from '@/store/modules/request/actions'
+import { readPizzas } from '@/store/modules/pizza/actions'
+
+import options from '@/utils/toLocaleStringOptions'
+import { doughError, edgeError } from '@/utils/errorToastMessages'
+
+import Layout from '@/components/Layout'
+import Loader from '@/components/Loader'
 import FullRowCard from '@/components/FullRowCard'
+import { GiPizzaCutter } from 'react-icons/gi'
 import {
   FullRowCardList,
   FullRowCardListItem,
   IconWrapper
 } from '@/styles/screens/assemble'
-import options from '@/utils/toLocaleStringOptions'
-import Link from 'next/link'
-import { GiPizzaCutter } from 'react-icons/gi'
-import Layout from '@/components/Layout'
-import { useRouter } from 'next/router'
-import { useFetch } from '@/hooks/useFetch'
-import { useDispatch, useSelector } from 'react-redux'
-import { GlobalStateInterface } from '@/store/modules/rootReducer'
-import { DefaultProps } from '@/models/pizza'
-import { RequestProps } from '@/models/request'
-import { createRequest } from '@/store/modules/request/actions'
-import { readPizzas } from '@/store/modules/pizza/actions'
-import Loader from '@/components/Loader'
-import { useToast } from '@/hooks/useToast'
-import { doughError, edgeError } from '@/utils/errorToastMessages'
 
 const Size: React.FC = () => {
   const router = useRouter()

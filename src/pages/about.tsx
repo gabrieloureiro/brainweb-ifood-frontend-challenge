@@ -3,11 +3,11 @@ import { useToast } from '@/hooks/useToast'
 
 import Layout from '@/components/Layout'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
-import { Col } from '@/components/Col'
 
 import {
   Anchor,
   Image,
+  InfoDeveloper,
   LargeText,
   MediumText,
   SmallText
@@ -15,6 +15,7 @@ import {
 import { Row } from '@/components/Row'
 import Tag from '@/components/Tag'
 import { stackes } from '@/models/aboutMeStackes'
+import { CONTAINER_ANIMATION, DEFAULT_TRANSITION } from '@/animations'
 
 const Home: React.FC = () => {
   const { addToast } = useToast()
@@ -29,14 +30,20 @@ const Home: React.FC = () => {
   return (
     <Layout
       title="Gabriel Loureiro"
-      description="A page with my description"
-      highlightTitle="Gabriel Loureiro"
+      description="Sobre o desenvolvedor"
+      highlightTitle="Sobre o desenvolvedor"
     >
-      <Col justify="center" align="center">
+      <InfoDeveloper
+        variants={CONTAINER_ANIMATION}
+        initial="unMounted"
+        animate="mounted"
+        exit="unMounted"
+        transition={DEFAULT_TRANSITION}
+      >
         <Image src="/images/gl-@2x.jpg" alt="avatar-stackes" />
         <LargeText>Gabriel Loureiro</LargeText>
         <MediumText>Frontend Developer</MediumText>
-        <SmallText>Brazilian, single, 22 years</SmallText>
+        <SmallText>Brasileiro, solteiro, 22 anos</SmallText>
         <Row wrap justify="center" align="center">
           <Anchor
             aria-label="linkedin"
@@ -59,7 +66,7 @@ const Home: React.FC = () => {
             <FiGithub color="#a1a1a1" size={24} style={{ marginLeft: '8px' }} />
           </Anchor>
         </Row>
-        <MediumText>I have knowledge in</MediumText>
+        <MediumText>Possuo conhecimento em</MediumText>
         <Row wrap justify="center" align="center" style={{ maxWidth: '650px' }}>
           {stackes.map((item, index) => {
             return (
@@ -73,7 +80,7 @@ const Home: React.FC = () => {
             )
           })}
         </Row>
-      </Col>
+      </InfoDeveloper>
     </Layout>
   )
 }

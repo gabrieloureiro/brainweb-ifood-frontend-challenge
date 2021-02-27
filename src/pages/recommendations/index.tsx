@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
 
+import { GlobalStateInterface } from '@/store/modules/rootReducer'
+import { RecommendProps } from '@/models/recommendations'
+
 import { useRouter } from 'next/router'
 import { useFetch } from '@/hooks/useFetch'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { readRecommendations } from '@/store/modules/recommendations/actions'
 
@@ -10,18 +14,13 @@ import Slider from '@/components/Slider'
 import Loader from '@/components/Loader'
 import { SiIfood } from 'react-icons/si'
 
-import { GlobalStateInterface } from '@/store/modules/rootReducer'
-import { RecommendProps } from '@/models/recommendations'
-
 import {
   BenefitPoints,
   DescriptionOffer,
   IconWp,
   TitleOffer
-} from '@/styles/screens/assemble/payments'
+} from '@/styles/screens/assemble/payment'
 import { CardRecommend } from '@/styles/screens/recommendations'
-import { RequestProps } from '@/models/request'
-import { createRequest } from '@/store/modules/request/actions'
 
 const Recommendations: React.FC = () => {
   const router = useRouter()
@@ -36,19 +35,8 @@ const Recommendations: React.FC = () => {
       dispatch(readRecommendations(data))
     }
   }, [data, dispatch])
-
   if (!data || !recommendations) {
     return <Loader />
-  }
-
-  const recommendationRequest = ({
-    dough,
-    edge,
-    filling,
-    size
-  }: RequestProps) => {
-    dispatch(createRequest({ dough, edge, filling, size }))
-    router.push('/recommendations/payment')
   }
 
   const getDayOfWeek = (day: number) => {
@@ -85,7 +73,7 @@ const Recommendations: React.FC = () => {
     <Layout
       title="Ofertas | Monte sua pizza!"
       description="Saiba qual a oferta do dia e faça seu pedido!"
-      highlightTitle="Selecione a oferta que deseja comprar"
+      highlightTitle="Selecione a oferta do dia para comprá-la"
     >
       <Slider>
         {recommendations.map(rec => {
@@ -95,7 +83,7 @@ const Recommendations: React.FC = () => {
               active={todayRecommendation(rec.id)}
               onClick={
                 todayRecommendation(rec.id) === true
-                  ? () => recommendationRequest(rec.request)
+                  ? () => router.push('/recommendations/payment')
                   : null
               }
             >

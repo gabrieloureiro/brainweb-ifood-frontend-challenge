@@ -4,6 +4,7 @@ import { CustomSlider, Wrapper } from './styles'
 import Arrow from './Arrow'
 import { SliderProps } from './types'
 import settings from './settings'
+import { CARDS_ANIMATION, DEFAULT_TRANSITION } from '@/animations'
 
 const Slider: React.FC<SliderProps> = ({
   arrowColor = '#E7A74E',
@@ -16,7 +17,13 @@ const Slider: React.FC<SliderProps> = ({
   }
 
   return (
-    <Wrapper>
+    <Wrapper
+      variants={CARDS_ANIMATION}
+      initial="unMounted"
+      animate="mounted"
+      exit="unMounted"
+      transition={DEFAULT_TRANSITION}
+    >
       <CustomSlider {...sliderSettings} arrowColor={arrowColor}>
         {children}
       </CustomSlider>

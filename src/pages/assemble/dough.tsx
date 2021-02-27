@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 
-import { useFetch } from '@/hooks/useFetch'
-
 import { DefaultProps } from '@/models/pizza'
 import { RequestProps } from '@/models/request'
 import { GlobalStateInterface } from '@/store/modules/rootReducer'
 
-import options from '@/utils/toLocaleStringOptions'
-
+import { useFetch } from '@/hooks/useFetch'
 import { useDispatch, useSelector } from 'react-redux'
 import { createRequest } from '@/store/modules/request/actions'
 import { readPizzas } from '@/store/modules/pizza/actions'
+
+import options from '@/utils/toLocaleStringOptions'
 
 import Layout from '@/components/Layout'
 import Loader from '@/components/Loader'

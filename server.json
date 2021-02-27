@@ -5,203 +5,49 @@
       "title": "Super pepperoni",
       "description": "1x Pizza grande de pepperoni (Massa grossa + Borda de cream cheese)",
       "value": 29.4,
-      "benefitPoints": 1.72,
-      "request": {
-        "dough": {
-          "id": 3,
-          "type": "Massa grossa",
-          "value": 4.5
-        },
-        "edge": {
-          "id": 3,
-          "type": "Borda de cream cheese",
-          "value": 4
-        },
-        "size": {
-          "id": 3,
-          "type": "Grande",
-          "value": 6
-        },
-        "filling": {
-          "id": 3,
-          "type": "Pepperoni",
-          "value": 19.9
-        }
-      }
+      "benefitPoints": 1.72
     },
     {
       "id": 1,
       "title": "Minion's de Frango",
       "description": "2x pizzas pequenas de frango (Massa fina + Borda padrão)",
       "value": 23.9,
-      "benefitPoints": 1.19,
-      "request": {
-        "dough": {
-          "id": 1,
-          "type": "Massa fina",
-          "value": 3.5
-        },
-        "edge": {
-          "id": 1,
-          "type": "Borda padrão",
-          "value": 0
-        },
-        "size": {
-          "id": 1,
-          "type": "Pequena",
-          "value": 4
-        },
-        "filling": {
-          "id": 2,
-          "type": "Frango",
-          "value": 13.9
-        }
-      }
+      "benefitPoints": 1.19
     },
     {
       "id": 2,
       "title": "Combo Gêmeas",
       "description": "2x Pizzas médias de frango (Massa caseira + Borda de cheddar)",
       "value": 49.9,
-      "benefitPoints": 2.49,
-      "request": {
-        "dough": {
-          "id": 2,
-          "type": "Massa caseira",
-          "value": 4
-        },
-        "edge": {
-          "id": 2,
-          "type": "Borda de cheddar",
-          "value": 2
-        },
-        "size": {
-          "id": 2,
-          "type": "Média",
-          "value": 5
-        },
-        "filling": {
-          "id": 2,
-          "type": "Frango",
-          "value": 13.9
-        }
-      }
+      "benefitPoints": 2.49
     },
     {
       "id": 3,
       "title": "Combo econômico",
       "description": "2x Pizzas grandes de calabresa + Refrigerante 2L (Massa grossa + Borda de cheddar)",
       "value": 45.9,
-      "benefitPoints": 2.29,
-      "request": {
-        "dough": {
-          "id": 3,
-          "type": "Massa grossa",
-          "value": 4.5
-        },
-        "edge": {
-          "id": 2,
-          "type": "Borda de cheddar",
-          "value": 2
-        },
-        "size": {
-          "id": 3,
-          "type": "Grande",
-          "value": 6
-        },
-        "filling": {
-          "id": 1,
-          "type": "Calabresa",
-          "value": 12.9
-        }
-      }
+      "benefitPoints": 2.29
     },
     {
       "id": 4,
       "title": "Tem pra todo mundo!",
       "description": "2x Pizzas grandes de frango (Massa caseira + Borda de cream cheese)",
       "value": 43.9,
-      "benefitPoints": 2.19,
-      "request": {
-        "dough": {
-          "id": 2,
-          "type": "Massa caseira",
-          "value": 4
-        },
-        "edge": {
-          "id": 3,
-          "type": "Borda de cream cheese",
-          "value": 4
-        },
-        "size": {
-          "id": 3,
-          "type": "Grande",
-          "value": 6
-        },
-        "filling": {
-          "id": 2,
-          "type": "Frango",
-          "value": 13.9
-        }
-      }
+      "benefitPoints": 2.19
     },
     {
       "id": 5,
       "title": "Combo Itália",
       "description": "2x Pizzas grandes de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
       "value": 54.9,
-      "benefitPoints": 2.74,
-      "request": {
-        "dough": {
-          "id": 3,
-          "type": "Massa grossa",
-          "value": 4.5
-        },
-        "edge": {
-          "id": 2,
-          "type": "Borda de cheddar",
-          "value": 2
-        },
-        "size": {
-          "id": 3,
-          "type": "Grande",
-          "value": 6
-        },
-        "filling": {
-          "id": 3,
-          "type": "Pepperoni",
-          "value": 19.9
-        }
-      }
+      "benefitPoints": 2.74
     },
     {
       "id": 6,
       "title": "Combo fim de tarde",
       "description": "4x Pizzas pequenas de frango + 2x Refrigerante 600ml (Massa caseira + Borda padrão)",
       "value": 49.9,
-      "benefitPoints": 2.49,
-      "request": {
-        "dough": {
-          "id": 2,
-          "type": "Massa caseira",
-          "value": 4
-        },
-        "edge": {
-          "id": 1,
-          "type": "Borda padrão",
-          "value": 0
-        },
-        "size": {
-          "id": 1,
-          "type": "Pequena",
-          "value": 4
-        },
-        "filling": {
-          "id": 2,
-          "type": "Frango",
-          "value": 13.9
-        }
-      }
+      "benefitPoints": 2.49
     }
   ],
   "pizzas": {
@@ -302,6 +148,22 @@
         "type": "Dinheiro",
         "value": 24.4
       }
+    }
+  ],
+  "requestsRecommendations": [
+    {
+      "id": "6165a006-7f2e-43e6-9a68-c397f832e072",
+      "title": "Combo Itália",
+      "description": "2x Pizzas grandes de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
+      "benefitPoints": 2.74,
+      "value": 54.9
+    },
+    {
+      "id": "1f40778d-aee1-46ff-8358-2549e5489d4d",
+      "title": "Combo Itália",
+      "description": "2x Pizzas grandes de pepperoni + Refrigerante 1L (Massa grossa + Borda de cheddar)",
+      "benefitPoints": 2.74,
+      "value": 54.9
     }
   ]
 }

@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import { shade } from 'polished'
 import styled from 'styled-components'
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   font-size: 32px;
   font-weight: bold;
   color: ${({ theme }) => theme.text};

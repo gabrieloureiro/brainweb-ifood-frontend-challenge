@@ -1,25 +1,31 @@
 import React, { useEffect } from 'react'
+import Link from 'next/link'
+
+import { GlobalStateInterface } from '@/store/modules/rootReducer'
+import { DefaultProps } from '@/models/pizza'
+import { RequestProps } from '@/models/request'
+
+import { useRouter } from 'next/router'
+import { useFetch } from '@/hooks/useFetch'
+import { useToast } from '@/hooks/useToast'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { createRequest } from '@/store/modules/request/actions'
+import { readPizzas } from '@/store/modules/pizza/actions'
+
+import options from '@/utils/toLocaleStringOptions'
+import { doughError } from '@/utils/errorToastMessages'
+
+import Layout from '@/components/Layout'
+import FullRowCard from '@/components/FullRowCard'
 import Loader from '@/components/Loader'
+import { SiIfood } from 'react-icons/si'
+
 import {
   FullRowCardList,
   FullRowCardListItem,
   IconWrapper
 } from '@/styles/screens/assemble'
-import Link from 'next/link'
-import FullRowCard from '@/components/FullRowCard'
-import options from '@/utils/toLocaleStringOptions'
-import { GlobalStateInterface } from '@/store/modules/rootReducer'
-import { useDispatch, useSelector } from 'react-redux'
-import { DefaultProps } from '@/models/pizza'
-import { RequestProps } from '@/models/request'
-import { createRequest } from '@/store/modules/request/actions'
-import { SiIfood } from 'react-icons/si'
-import { useFetch } from '@/hooks/useFetch'
-import { readPizzas } from '@/store/modules/pizza/actions'
-import Layout from '@/components/Layout'
-import { useRouter } from 'next/router'
-import { useToast } from '@/hooks/useToast'
-import { doughError } from '@/utils/errorToastMessages'
 
 const Edge: React.FC = () => {
   const router = useRouter()

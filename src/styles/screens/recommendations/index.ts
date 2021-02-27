@@ -10,10 +10,11 @@ export const CardRecommend = styled.div<CardRecProps>`
   width: 350px;
   height: 470px;
   padding: 24px;
-  transition: all 100ms ease 0s;
+  transition: all 100ms ease;
   opacity: ${({ active }) => (active ? '1' : '0.4')};
   cursor: ${({ active }) => (active ? 'pointer' : 'not-allowed')};
   border-right: 8px solid ${({ theme }) => theme.body};
+  border-left: 8px solid ${({ theme }) => theme.body};
 
   span {
     &:nth-of-type(1) {
