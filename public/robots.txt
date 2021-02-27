@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brainweb-ifood-frontend-challenge.vercel.app/sitemap.xml

@@ -43,7 +43,6 @@ export const Container = styled(animated.div) <ContainerProps>`
     p {
       padding-top: 4px;
       font-size: 14px;
-      opacity: 0.6;
       line-height: 20px;
       max-width: 360px;
     }
