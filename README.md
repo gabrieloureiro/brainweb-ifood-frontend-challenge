@@ -132,6 +132,11 @@ You need to install npm (to install yarn, hahaha)
 ![image](https://user-images.githubusercontent.com/39869298/109377548-d6e46d80-78aa-11eb-9f7b-79b54c558760.png)
 ![image](https://user-images.githubusercontent.com/39869298/109377560-e499f300-78aa-11eb-9dc7-68597fb9fca9.png)
 
+## Lighthouse Stats
+
+![image](https://user-images.githubusercontent.com/39869298/109377744-0c3d8b00-78ac-11eb-9508-07bca05a2fff.png)
+
+
 <!-- CONTACT -->
 ## Contact
 
