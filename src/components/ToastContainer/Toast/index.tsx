@@ -32,11 +32,7 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
         <strong>{message.title}</strong>
         <p>{message.description}</p>
       </div>
-      <button
-        name="closeToast"
-        type="button"
-        onClick={() => removeToast(message.id)}
-      >
+      <button aria-label="close" onClick={() => removeToast(message.id)}>
         <FiXCircle size={18} />
       </button>
     </Container>
