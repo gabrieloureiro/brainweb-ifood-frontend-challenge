@@ -57,7 +57,8 @@
 
 ![image](https://user-images.githubusercontent.com/39869298/109377454-460d9200-78aa-11eb-87a6-7d6ddd4105ff.png)
 
-This platform allows the user to create, delete and search for useful tools for a given scope, whatever it may be.
+This platform allows the user to assemble a custom pizza or buy a special offer.
+
 ### Built With
 
 * [React](https://reactjs.org/)
