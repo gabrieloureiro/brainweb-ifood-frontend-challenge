@@ -92,6 +92,7 @@ export const NavButton = styled(Button)`
     :nth-child(2) {
       color: ${({ theme }) => shade(0.1, theme.yellow)};
       font-weight: 500;
+      border-radius: 0;
     }
     :last-child {
       color: ${({ theme }) => shade(0.1, theme.primary)};
