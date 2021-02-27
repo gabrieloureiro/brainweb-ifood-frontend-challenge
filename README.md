@@ -127,9 +127,10 @@ You need to install npm (to install yarn, hahaha)
 
 ![image](https://user-images.githubusercontent.com/39869298/109377490-8240f280-78aa-11eb-8eed-1ee1460f23d5.png)
 
-* You can also trigger the switch to search for tags only
+* When you buy a special offer, you earn points that are worth real money
 
-![image](https://user-images.githubusercontent.com/39869298/108785559-6ce96280-7550-11eb-8dae-0a447507afe3.png)
+![image](https://user-images.githubusercontent.com/39869298/109377548-d6e46d80-78aa-11eb-9f7b-79b54c558760.png)
+![image](https://user-images.githubusercontent.com/39869298/109377560-e499f300-78aa-11eb-9dc7-68597fb9fca9.png)
 
 <!-- CONTACT -->
 ## Contact
@@ -157,4 +158,4 @@ Email - [gabrieloureirof@gmail.com](mailto:gabrieloureirof@gmail.com)
 [linkedin-url]: https://linkedin.com/in/gabrieloureiro
 [product-screenshot]: images/screenshot.png
 
-[stacks]: https://user-images.githubusercontent.com/39869298/108784490-475b5980-754e-11eb-8ddd-059aebfac5af.png
+[stacks]: https://user-images.githubusercontent.com/39869298/109377578-f8ddf000-78aa-11eb-87d8-2ff40514e30f.png
