@@ -10,7 +10,7 @@
 <br />
 <p align="center">
 
-  <img src="/public/ifood.png" alt="ifood" width="120" height="80">
+  <img src="/public/images/ifood.png" alt="ifood" width="120" height="80">
 
   <h3 align="center">iFood + Brainweb Frontend Challenge</h3>
 
@@ -55,7 +55,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://user-images.githubusercontent.com/39869298/108779918-6950de00-7546-11eb-9c2c-86c76e010ff9.png)
+![image](https://user-images.githubusercontent.com/39869298/109377454-460d9200-78aa-11eb-87a6-7d6ddd4105ff.png)
 
 This platform allows the user to create, delete and search for useful tools for a given scope, whatever it may be.
 ### Built With
@@ -111,17 +111,19 @@ You need to install npm (to install yarn, hahaha)
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-* To add a tool, click on the button <strong>'Add Tool'</strong> and fill the fields correctly
+* Click in the button <strong>'Ir para o Hub'</strong> to access the platform
 
-![image](https://user-images.githubusercontent.com/39869298/108784981-48d95180-754f-11eb-9954-277fa3bc0442.png)
+![image](https://user-images.githubusercontent.com/39869298/109377229-ba473600-78a8-11eb-8b2d-fafe0f991a98.png)
 
-* To delele a tool, click on the button <strong>'Bin'</strong> in the tool card and confirm your action
+* To assemble a pizza: click at card in the left
 
 ![image](https://user-images.githubusercontent.com/39869298/108785197-af5e6f80-754f-11eb-84ad-a1b1380473b0.png)
 
-![image](https://user-images.githubusercontent.com/39869298/108785215-b7b6aa80-754f-11eb-9a8d-026c9f3cf449.png)
+* To pick a special offer: click at card in the middle
 
-* To search a specific tool: <strong>'Fill the search field'</strong> with some word present on some tool
+![image](https://user-images.githubusercontent.com/39869298/109377256-f4183c80-78a8-11eb-9456-a361274bbbca.png)
+
+* To read more about the developer: click at card in the right
 
 ![image](https://user-images.githubusercontent.com/39869298/108785449-30b60200-7550-11eb-97bf-8cf651653883.png)
 
