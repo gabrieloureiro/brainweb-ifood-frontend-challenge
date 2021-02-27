@@ -16,6 +16,7 @@ import {
 import INITIAL_ANIMATION from '@/animations/initial'
 import { useToast } from '@/hooks/useToast'
 import { welcomeInfo } from '@/utils/infoToastMessages'
+import { CONTAINER_ANIMATION } from '@/animations'
 
 const App: React.FC = () => {
   const router = useRouter()
@@ -28,7 +29,12 @@ const App: React.FC = () => {
 
   return (
     <Wrapper>
-      <FloatThemeChanger onClick={() => changeTheme(theme)}>
+      <title>iFood Pizzas</title>
+      <meta name="description" content="Monte sua pizza | Ganhe pontos comprando a ofeta de hoje"></meta>
+      <FloatThemeChanger variants={CONTAINER_ANIMATION}
+        initial="unMounted"
+        animate="mounted"
+        exit="unMounted" onClick={() => changeTheme(theme)}>
         {theme.title === 'dark' ? (
           <FaSun color="#ffa500" size={24} />
         ) : (

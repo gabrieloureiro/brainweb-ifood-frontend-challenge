@@ -47,7 +47,9 @@ export const AnimatedContainer = styled(motion.main)`
 
 export const EnterButton = styled(Button)`
   ${({ theme }) => css`
-    width: 400px;
+    padding: 16px 32px;
+    width: 350px;
+    min-width: 115px;
     margin-top: 1.2rem;
     color: #fff;
     background: ${shade(0.2, theme.primary)};
@@ -56,9 +58,13 @@ export const EnterButton = styled(Button)`
     &:hover {
       background: ${shade(0.4, theme.primary)};
     }
+
+    @media screen and (max-width: 364px) {
+      width: 100%;
+    }
   `}
 `
-export const FloatThemeChanger = styled.div`
+export const FloatThemeChanger = styled(motion.div)`
   position: absolute;
   top: 64px;
   cursor: pointer;
