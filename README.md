@@ -10,7 +10,7 @@
 <br />
 <p align="center">
 
-  <img src="/public/images/ifood.png" alt="ifood" width="120" height="80">
+  <img src="/public/images/ifood.png" alt="ifood" width="120" height="65">
 
   <h3 align="center">iFood + Brainweb Frontend Challenge</h3>
 
@@ -117,7 +117,7 @@ You need to install npm (to install yarn, hahaha)
 
 * To assemble a pizza: click at card in the left
 
-![image](https://user-images.githubusercontent.com/39869298/108785197-af5e6f80-754f-11eb-84ad-a1b1380473b0.png)
+![image](https://user-images.githubusercontent.com/39869298/109377490-8240f280-78aa-11eb-8eed-1ee1460f23d5.png)
 
 * To pick a special offer: click at card in the middle
 
@@ -125,7 +125,7 @@ You need to install npm (to install yarn, hahaha)
 
 * To read more about the developer: click at card in the right
 
-![image](https://user-images.githubusercontent.com/39869298/108785449-30b60200-7550-11eb-97bf-8cf651653883.png)
+![image](https://user-images.githubusercontent.com/39869298/109377490-8240f280-78aa-11eb-8eed-1ee1460f23d5.png)
 
 * You can also trigger the switch to search for tags only
 
