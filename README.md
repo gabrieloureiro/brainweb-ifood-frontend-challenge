@@ -11,6 +11,7 @@
 <p align="center">
 
   <img src="/public/images/ifood.png" alt="ifood" width="120" height="65">
+  <img src="/public/images/brainweb.png" alt="ifood" width="120" height="65">
 
   <h3 align="center">iFood + Brainweb Frontend Challenge</h3>
 
@@ -68,6 +69,7 @@ This platform allows the user to assemble a custom pizza or buy a special offer.
 * [Redux](https://react-redux.js.org/)
 * [Redux Persist](https://github.com/rt2zz/redux-persist)
 * [Framer Motion](https://www.framer.com/api/motion/)
+
 
 * [ESLint](https:///)
 * [Prettier](https://)
